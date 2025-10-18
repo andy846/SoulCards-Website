@@ -5,7 +5,7 @@ import tsconfigPaths from 'vite-tsconfig-paths'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), tsconfigPaths()],
-  base: '/SoulCards-Website/',
+  base: process.env.NODE_ENV === 'production' ? '/SoulCards-Website/' : '/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
