@@ -10,19 +10,6 @@ build/
 
 # Large source materials (not needed for deployment)
 materials/
-*.PNG
-*.JPG
-*.JPEG
-
-# Large iOS assets (keep only essential ones)
-SoulCards/Assets.xcassets/AppIcon.appiconset/file.svg
-SoulCards/Assets.xcassets/AppIcon.appiconset/icon-1024.png
-SoulCards/Assets.xcassets/tarot_main_image.imageset/Gemini_Generated_Image_*.png
-
-# Xcode build artifacts and derived data
-DerivedData/
-*.xcworkspace/
-*.xcuserdata/
 
 # Environment variables
 .env
