@@ -1,14 +1,50 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-TW">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/assets/icons/icon-60.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/icon-180.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/icon-120.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/icon-60.png" />
+    <link rel="icon" type="image/png" href="/icon-180.png" />
+    <link rel="apple-touch-icon" href="/icon-180.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/icon-120.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/icon-152.png" />
+    <link rel="apple-touch-icon" sizes="167x167" href="/icon-167.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png" />
+    <link rel="manifest" href="/manifest.json" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SoulCards - 神秘塔羅之旅</title>
-    <meta name="description" content="探索神秘的塔羅世界，獲得個人化的占卜指導" />
+    <title>SoulCards - AI 塔羅牌占卜應用</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="SoulCards 是一款革命性的 AI 塔羅牌占卜應用，提供個人化的神秘指導和每日洞察。探索您的內在智慧，獲得人生方向。" />
+    <meta name="keywords" content="塔羅牌,AI占卜,神秘學,個人指導,每日運勢,靈性成長,SoulCards" />
+    <meta name="author" content="SoulCards Team" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="SoulCards - AI 塔羅牌占卜應用" />
+    <meta property="og:description" content="革命性的 AI 塔羅牌占卜應用，提供個人化的神秘指導和每日洞察。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://soulcards.github.io/website/" />
+    <meta property="og:image" content="https://soulcards.github.io/website/pwa-512x512.svg" />
+    <meta property="og:site_name" content="SoulCards" />
+    <meta property="og:locale" content="zh_TW" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SoulCards - AI 塔羅牌占卜應用" />
+    <meta name="twitter:description" content="革命性的 AI 塔羅牌占卜應用，提供個人化的神秘指導和每日洞察。" />
+    <meta name="twitter:image" content="https://soulcards.github.io/website/pwa-512x512.svg" />
+    
+    <!-- Additional Meta Tags -->
+    <meta name="theme-color" content="#8B5CF6" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="SoulCards" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://soulcards.github.io/website/" />
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <script type="module">
       if (import.meta.hot?.on) {
         import.meta.hot.on('vite:error', (error) => {

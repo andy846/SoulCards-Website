@@ -2,16 +2,266 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@layer base {
+  * {
+    @apply border-mystical-700/30;
+  }
+  
+  body {
+    @apply bg-void-950 text-white font-mystical;
+    background: 
+      radial-gradient(ellipse at 20% 10%, rgba(102, 51, 153, 0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 90%, rgba(139, 92, 246, 0.12) 0%, transparent 50%),
+      radial-gradient(ellipse at 40% 60%, rgba(79, 70, 229, 0.1) 0%, transparent 40%),
+      radial-gradient(ellipse at 60% 20%, rgba(168, 85, 247, 0.08) 0%, transparent 35%),
+      linear-gradient(180deg, 
+        rgba(15, 15, 35, 1) 0%, 
+        rgba(12, 10, 31, 1) 25%,
+        rgba(8, 5, 20, 1) 50%,
+        rgba(5, 0, 15, 1) 75%,
+        rgba(0, 0, 8, 1) 100%
+      );
+    background-attachment: fixed;
+    overflow-x: hidden;
+    position: relative;
+  }
+  
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      radial-gradient(2px 2px at 20px 30px, rgba(255, 255, 255, 0.8), transparent),
+      radial-gradient(2px 2px at 40px 70px, rgba(255, 255, 255, 0.6), transparent),
+      radial-gradient(1px 1px at 90px 40px, rgba(255, 255, 255, 0.9), transparent),
+      radial-gradient(1px 1px at 130px 80px, rgba(255, 255, 255, 0.7), transparent),
+      radial-gradient(2px 2px at 160px 30px, rgba(255, 255, 255, 0.5), transparent);
+    background-repeat: repeat;
+    background-size: 200px 100px;
+    animation: starTwinkle 8s linear infinite;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      radial-gradient(ellipse 800px 600px at 50% 20%, rgba(139, 92, 246, 0.03) 0%, transparent 50%),
+      radial-gradient(ellipse 600px 400px at 20% 80%, rgba(168, 85, 247, 0.04) 0%, transparent 50%),
+      radial-gradient(ellipse 400px 300px at 80% 60%, rgba(124, 58, 237, 0.05) 0%, transparent 50%);
+    animation: nebulaFloat 25s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 2;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer components {
+  .mystical-card {
+    @apply bg-gradient-to-br from-void-800/50 to-void-900/50 backdrop-blur-sm border border-mystical-700/30 rounded-xl p-6 shadow-lg hover:shadow-mystical-700/20 transition-all duration-300;
+    position: relative;
+    z-index: 10;
+  }
+  
+  .cosmic-button {
+    @apply bg-gradient-to-r from-mystical-600 to-cosmic-500 hover:from-mystical-700 hover:to-cosmic-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-mystical-500/25;
+  }
+  
+  .mystical-glow {
+    @apply shadow-lg shadow-mystical-700/30 hover:shadow-mystical-600/40 transition-shadow duration-300;
+  }
+  
+  .floating-card {
+    @apply animate-float hover:animate-none transition-all duration-300;
+  }
+  
+  .shimmer-effect {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .shimmer-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent
+    );
+    animation: shimmer 2s infinite;
+  }
+  
+  .tarot-card {
+    @apply relative overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-mystical-600/30;
+    aspect-ratio: 2/3;
+  }
+  
+  .tarot-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(124, 58, 237, 0.1) 0%,
+      transparent 50%,
+      rgba(234, 179, 8, 0.1) 100%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .tarot-card:hover::before {
+    opacity: 1;
+  }
+
+  .cosmic-glow {
+    animation: cosmicGlow 4s ease-in-out infinite alternate;
+  }
+
+  .mystical-gradient {
+    background: linear-gradient(135deg, 
+      rgba(102, 51, 153, 0.8) 0%,
+      rgba(139, 92, 246, 0.6) 25%,
+      rgba(168, 85, 247, 0.7) 50%,
+      rgba(124, 58, 237, 0.5) 75%,
+      rgba(79, 70, 229, 0.6) 100%
+    );
+  }
+
+  .gold-mystical-gradient {
+    background: linear-gradient(135deg,
+      rgba(255, 215, 0, 0.9) 0%,
+      rgba(255, 193, 7, 0.8) 25%,
+      rgba(255, 235, 59, 0.7) 50%,
+      rgba(255, 215, 0, 0.6) 75%,
+      rgba(255, 193, 7, 0.8) 100%
+    );
+  }
+
+  .deep-space-card {
+    @apply bg-gradient-to-br from-void-900/80 via-mystical-900/60 to-cosmic-900/80 
+           border border-mystical-500/30 rounded-xl p-6 
+           shadow-2xl shadow-mystical-500/20 backdrop-blur-sm
+           hover:shadow-mystical-400/30 transition-all duration-300;
+  }
+
+  .shimmer-effect {
+    @apply relative overflow-hidden;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%) skewX(-12deg);
+    }
+    100% {
+      transform: translateX(200%) skewX(-12deg);
+    }
+  }
+
+  .starfield-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    background: 
+      radial-gradient(ellipse at 20% 10%, rgba(124, 58, 237, 0.1) 0%, transparent 40%),
+      radial-gradient(ellipse at 80% 90%, rgba(234, 179, 8, 0.08) 0%, transparent 40%),
+      radial-gradient(ellipse at 40% 60%, rgba(168, 85, 247, 0.06) 0%, transparent 30%);
+    animation: nebulaShift 20s ease-in-out infinite;
+  }
+
+  @keyframes cosmicGlow {
+    0% { 
+      box-shadow: 0 0 20px rgba(124, 58, 237, 0.3), 0 0 40px rgba(124, 58, 237, 0.1);
+    }
+    100% { 
+      box-shadow: 0 0 30px rgba(124, 58, 237, 0.5), 0 0 60px rgba(124, 58, 237, 0.2);
+    }
+  }
+
+  @keyframes nebulaShift {
+    0%, 100% {
+      transform: translateX(0) translateY(0) scale(1);
+      opacity: 0.8;
+    }
+    25% {
+      transform: translateX(10px) translateY(-5px) scale(1.02);
+      opacity: 0.9;
+    }
+    50% {
+      transform: translateX(-5px) translateY(10px) scale(0.98);
+      opacity: 1;
+    }
+    75% {
+      transform: translateX(-10px) translateY(-10px) scale(1.01);
+      opacity: 0.85;
+    }
+  }
+
+  @keyframes starTwinkle {
+    0%, 100% {
+      opacity: 0.8;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+  }
+
+  @keyframes nebulaFloat {
+    0%, 100% {
+      transform: translateX(0) translateY(0) rotate(0deg);
+      opacity: 0.6;
+    }
+    25% {
+      transform: translateX(20px) translateY(-10px) rotate(1deg);
+      opacity: 0.8;
+    }
+    50% {
+      transform: translateX(-10px) translateY(15px) rotate(-0.5deg);
+      opacity: 1;
+    }
+    75% {
+      transform: translateX(-15px) translateY(-20px) rotate(0.8deg);
+      opacity: 0.7;
+    }
+  }
+}
+
+:root {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

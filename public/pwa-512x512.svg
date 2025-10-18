@@ -1,0 +1,49 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="mysticalGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7c3aed;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#9d72ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#eab308;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="512" height="512" rx="64" fill="#0f0f23"/>
+  
+  <!-- Stars -->
+  <circle cx="100" cy="80" r="3" fill="#ffffff" opacity="0.3"/>
+  <circle cx="420" cy="130" r="4" fill="#ffffff" opacity="0.4"/>
+  <circle cx="80" cy="200" r="2" fill="#ffffff" opacity="0.2"/>
+  <circle cx="450" cy="320" r="3" fill="#ffffff" opacity="0.3"/>
+  <circle cx="130" cy="420" r="4" fill="#ffffff" opacity="0.4"/>
+  <circle cx="380" cy="450" r="2" fill="#ffffff" opacity="0.3"/>
+  
+  <!-- Main Tarot Card -->
+  <rect x="146" y="106" width="220" height="300" rx="20" fill="url(#mysticalGradient)" filter="url(#glow)"/>
+  <rect x="156" y="116" width="200" height="280" rx="16" fill="#1e293b" stroke="#7c3aed" stroke-width="4"/>
+  
+  <!-- Card Design -->
+  <circle cx="256" cy="200" r="40" fill="none" stroke="#eab308" stroke-width="4"/>
+  <path d="M256 170 L276 210 L236 210 Z" fill="#eab308"/>
+  <path d="M256 240 L236 280 L276 280 Z" fill="#eab308"/>
+  
+  <!-- Mystical Symbols -->
+  <circle cx="256" cy="256" r="12" fill="#9d72ff"/>
+  <path d="M226 256 L256 226 L286 256 L256 286 Z" fill="none" stroke="#7c3aed" stroke-width="3"/>
+  
+  <!-- Additional decorative elements -->
+  <circle cx="196" cy="160" r="6" fill="#cosmic-400" opacity="0.6"/>
+  <circle cx="316" cy="160" r="6" fill="#cosmic-400" opacity="0.6"/>
+  <circle cx="196" cy="352" r="6" fill="#cosmic-400" opacity="0.6"/>
+  <circle cx="316" cy="352" r="6" fill="#cosmic-400" opacity="0.6"/>
+  
+  <!-- App Title -->
+  <text x="256" y="460" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="36" font-weight="bold">SoulCards</text>
+</svg>

@@ -1,261 +1,159 @@
-# SoulCards Website
+# SoulCards - AI-Powered Tarot Reading Website
 
-A mystical and elegant promotional website for the SoulCards iOS tarot reading app.
+A mystical promotional website for SoulCards, an AI-powered tarot reading mobile application. Built with React 18, TypeScript, Vite, Tailwind CSS, and Framer Motion.
 
-## 🌟 Project Overview
+## ✨ Features
 
-This website showcases the SoulCards iOS app with a beautiful, mystical design that matches the app's aesthetic. The site is built with modern web technologies and optimized for performance and SEO.
+- **Modern Tech Stack**: React 18 + TypeScript + Vite + Tailwind CSS
+- **Mystical Design**: Dark theme with purple/gold gradients and cosmic animations
+- **Responsive Design**: Mobile-first approach with beautiful animations
+- **PWA Support**: Progressive Web App capabilities
+- **SEO Optimized**: Meta tags and structured data for better search visibility
+- **GitHub Pages Ready**: Automated deployment with GitHub Actions
 
-### Features
-- 🎨 Mystical dark theme with purple and gold accents
-- ⭐ Interactive starry background animations
-- 📱 Responsive design for all devices
-- 🚀 Fast loading with Vite and modern optimization
-- 🔍 SEO optimized with React Helmet
-- 📲 App Store download integration
-- 💫 Smooth animations with Framer Motion
+## 🚀 Pages
 
-## 🛠️ Technology Stack
+- **Homepage**: Hero section, features overview, app screenshots, testimonials
+- **Features**: Detailed feature explanations with interactive demos
+- **Pricing**: Subscription plans with feature comparison
+- **About Us**: Team information and company story
+- **Privacy Policy**: Comprehensive privacy protection details
+- **Terms of Service**: Clear terms and conditions
 
-- **Frontend**: React 18 with TypeScript
-- **Build Tool**: Vite
-- **Styling**: Tailwind CSS
-- **Animations**: Framer Motion
-- **Routing**: React Router DOM
+## 🛠️ Tech Stack
+
+- **Frontend**: React 18, TypeScript, Vite
+- **Styling**: Tailwind CSS with custom mystical theme
+- **Animations**: Framer Motion for smooth transitions
+- **Routing**: React Router (Hash mode for GitHub Pages)
+- **Icons**: Lucide React
 - **SEO**: React Helmet Async
-- **State Management**: Zustand
-- **Icons**: Lucide React & Heroicons
+- **PWA**: Vite PWA Plugin
 
 ## 📦 Installation
 
-### Prerequisites
-- Node.js 18+ 
-- pnpm (recommended) or npm
-
-### Setup
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/SoulCards_Website.git
+git clone <repository-url>
 cd SoulCards_Website
 ```
 
 2. Install dependencies:
 ```bash
 pnpm install
-# or
-npm install
 ```
 
 3. Start development server:
 ```bash
-pnpm dev
-# or
-npm run dev
+pnpm run dev
 ```
 
 4. Build for production:
 ```bash
-pnpm build
-# or
-npm run build
+pnpm run build
 ```
 
-## 🚀 Deployment Options
+## 🎨 Design System
 
-### Option 1: GitHub Pages (Recommended)
+### Colors
+- **Mystical**: Purple gradients (#8B5CF6 to #A855F7)
+- **Cosmic**: Blue-purple gradients (#3B82F6 to #8B5CF6)
+- **Void**: Dark backgrounds (#0F0F23 to #1E1B4B)
 
-#### Automatic Deployment with GitHub Actions
+### Typography
+- **Primary**: Inter font family
+- **Mystical**: Custom mystical font for special elements
 
-1. **Fork or create a new repository** on GitHub
+### Animations
+- **Float**: Gentle floating animation for cards
+- **Shimmer**: Magical shimmer effects
+- **Mystical Glow**: Pulsing glow animations
+- **Card Flip**: 3D card flip transitions
 
-2. **Update the base URL** in `vite.config.ts`:
-```typescript
-export default defineConfig({
-  base: '/your-repo-name/', // Change this to your repository name
-  // ... rest of config
-})
-```
+## 📱 PWA Configuration
 
-3. **Commit and push your code**:
+The website includes Progressive Web App features:
+- Service Worker for offline functionality
+- Web App Manifest for installation
+- Optimized caching strategies
+- Custom app icons (SVG format)
+
+## 🚀 Deployment
+
+### GitHub Pages (Automatic)
+The website automatically deploys to GitHub Pages when code is pushed to the main branch using GitHub Actions.
+
+### Manual Deployment
 ```bash
-git add .
-git commit -m "Initial commit"
-git remote add origin https://github.com/yourusername/your-repo-name.git
-git push -u origin main
-```
-
-4. **Enable GitHub Pages**:
-   - Go to your repository Settings
-   - Navigate to "Pages" section
-   - Select "GitHub Actions" as the source
-   - The workflow will automatically deploy your site
-
-#### Manual Deployment
-
-1. **Build the project**:
-```bash
-pnpm build
-```
-
-2. **Install gh-pages** (if not already installed):
-```bash
-pnpm add -D gh-pages
-```
-
-3. **Add deploy script** to `package.json`:
-```json
-{
-  "scripts": {
-    "deploy": "pnpm build && gh-pages -d dist"
-  }
-}
-```
-
-4. **Deploy to GitHub Pages**:
-```bash
-pnpm deploy
-```
-
-### Option 2: Vercel Deployment
-
-1. **Install Vercel CLI**:
-```bash
-pnpm add -g vercel
-```
-
-2. **Deploy**:
-```bash
-vercel --prod
-```
-
-3. **Follow the prompts** to configure your deployment
-
-### Option 3: Netlify Deployment
-
-1. **Build the project**:
-```bash
-pnpm build
-```
-
-2. **Install Netlify CLI**:
-```bash
-pnpm add -g netlify-cli
-```
-
-3. **Deploy**:
-```bash
-netlify deploy --prod --dir=dist
+pnpm run deploy
 ```
 
 ## 📁 Project Structure
 
 ```
-SoulCards_Website/
-├── public/                 # Static assets
-├── src/
-│   ├── components/         # Reusable components
-│   ├── pages/              # Page components
-│   ├── hooks/              # Custom React hooks
-│   ├── lib/                # Utility functions
-│   ├── styles/             # Global styles
-│   └── assets/             # Images and media
-├── .github/workflows/      # GitHub Actions
-├── supabase/               # Database migrations
-└── dist/                   # Build output
+src/
+├── components/          # Reusable components
+│   ├── Header.tsx      # Navigation header
+│   └── Footer.tsx      # Site footer
+├── pages/              # Page components
+│   ├── Home.tsx        # Homepage
+│   ├── Features.tsx    # Features page
+│   ├── Pricing.tsx     # Pricing page
+│   ├── About.tsx       # About page
+│   ├── Privacy.tsx     # Privacy policy
+│   └── Terms.tsx       # Terms of service
+├── App.tsx             # Main app component
+├── main.tsx            # App entry point
+└── index.css           # Global styles
 ```
 
-## 🎨 Customization
+## 🎯 Key Features
 
-### Colors
-Edit the color scheme in `tailwind.config.js`:
-```javascript
-colors: {
-  primary: {
-    50: '#faf5ff',
-    500: '#8b5cf6',
-    600: '#7c3aed',
-    900: '#581c87',
-  },
-  // ... more colors
-}
-```
+### Mystical Theme
+- Custom Tailwind CSS configuration with mystical colors
+- Gradient backgrounds and cosmic effects
+- Floating animations and magical transitions
+- Star field backgrounds and mystical glows
 
-### Content
-Update the content in:
-- `src/pages/Home.tsx` - Homepage content
-- `src/pages/Features.tsx` - Feature descriptions
-- `src/pages/Pricing.tsx` - Subscription plans
-- `src/components/AppStoreButton.tsx` - App Store link
+### Performance Optimized
+- Vite for fast development and building
+- Code splitting and lazy loading
+- Optimized images and assets
+- Efficient bundle size
 
-### Images
-Replace images in `src/assets/` with your own:
-- App screenshots
-- Feature illustrations
-- Background images
+### SEO & Accessibility
+- Semantic HTML structure
+- Meta tags for social sharing
+- Alt texts for images
+- Keyboard navigation support
 
-## 🔧 Development Tips
+## 🔧 Configuration
 
-### Adding New Pages
-1. Create a new component in `src/pages/`
-2. Add route in `src/App.tsx`
-3. Update navigation components
+### Vite Configuration
+- PWA plugin for service worker
+- Base path for GitHub Pages deployment
+- Build optimizations and chunking
 
-### Styling Guidelines
-- Use Tailwind utility classes
-- Follow the existing color scheme
-- Maintain responsive design principles
-- Use Framer Motion for animations
-
-### Performance Optimization
-- Images are automatically optimized
-- Code splitting is handled by Vite
-- Lazy loading for heavy components
-
-## 📱 App Store Integration
-
-Update the App Store link in your components:
-```typescript
-const APP_STORE_URL = 'https://apps.apple.com/app/your-app-id'
-```
-
-## 🔒 Security
-
-- No sensitive data is exposed
-- Environment variables are properly configured
-- Build process is secure
-
-## 🐛 Troubleshooting
-
-### Common Issues
-
-1. **Build fails**: Check TypeScript errors with `pnpm check`
-2. **CSS not loading**: Ensure Tailwind is properly configured
-3. **Images not showing**: Check paths in production build
-4. **Routing issues**: Verify base URL in `vite.config.ts`
-
-### Getting Help
-
-- Check the [Issues](https://github.com/yourusername/your-repo/issues) tab
-- Review the [Discussions](https://github.com/yourusername/your-repo/discussions)
+### Tailwind Configuration
+- Custom mystical color palette
+- Extended animations and keyframes
+- Custom component classes
+- Responsive design utilities
 
 ## 📄 License
 
-This project is licensed under the MIT License.
+This project is proprietary and confidential. All rights reserved.
 
 ## 🤝 Contributing
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
+This is a private project. Please contact the development team for contribution guidelines.
 
 ## 📞 Support
 
-For support, please contact:
+For support and questions, please contact:
 - Email: support@soulcards.app
-- Website: https://soulcards.app
+- Website: [SoulCards Official](https://soulcards.app)
 
 ---
 
-**Built with ❤️ for SoulCards**
+Made with ❤️ for spiritual seekers worldwide

@@ -5,6 +5,8 @@
 SoulCards 推廣網站是一個專為 iOS 塔羅占卜應用程式設計的官方推廣平台，旨在展示應用程式的神秘魅力和強大功能。
 網站採用與 iOS 應用相同的神秘主題設計風格，通過優雅的視覺呈現和流暢的用戶體驗，引導潛在用戶了解並下載 SoulCards 應用程式，最終提升訂閱轉換率和品牌知名度。
 
+**部署目標**: 網站將部署到 GitHub Pages，提供免費、穩定的靜態網站託管服務，支援自動化部署和 HTTPS 安全連接。
+
 ## 2. Core Features
 
 ### 2.1 User Roles
@@ -58,18 +60,23 @@ SoulCards 推廣網站是一個專為 iOS 塔羅占卜應用程式設計的官�
 
 ```mermaid
 graph TD
-    A[首頁] --> B[功能介紹頁]
-    A --> C[訂閱方案頁]
+    A[首頁 /#/] --> B[功能介紹頁 /#/features]
+    A --> C[訂閱方案頁 /#/pricing]
     A --> D[App Store 下載]
     B --> C
     B --> D
     C --> D
-    A --> E[隱私政策頁]
-    A --> F[服務條款頁]
-    A --> G[關於我們頁]
+    A --> E[隱私政策頁 /#/privacy]
+    A --> F[服務條款頁 /#/terms]
+    A --> G[關於我們頁 /#/about]
     E --> F
     F --> E
     G --> A
+    
+    subgraph "GitHub Pages 部署"
+        H[username.github.io/SoulCards_Website]
+        H --> A
+    end
 ```
 
 ## 4. User Interface Design
@@ -98,3 +105,12 @@ graph TD
 ### 4.3 Responsiveness
 
 網站採用移動優先的響應式設計，在桌面端提供完整體驗，在移動端優化觸控交互。主要斷點：768px（平板）、1024px（桌面），支持觸控手勢和懸停效果的適配。
+
+### 4.4 GitHub Pages 優化特性
+
+- **PWA 支持**: 支援離線瀏覽和應用程式安裝
+- **SEO 優化**: 完整的 meta 標籤和 Open Graph 配置
+- **性能優化**: 代碼分割、懶加載和圖片優化
+- **自動部署**: GitHub Actions 自動化構建和部署
+- **HTTPS 安全**: GitHub Pages 提供免費 SSL 證書
+- **CDN 加速**: 全球內容分發網路提升載入速度
