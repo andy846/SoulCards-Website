@@ -1,0 +1,236 @@
+/* 移動端優化樣式 */
+
+/* 觸控優化 */
+@media (max-width: 768px) {
+  /* 確保觸控目標至少 44px */
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* 改善觸控反饋 */
+  .touch-feedback {
+    -webkit-tap-highlight-color: rgba(255, 215, 0, 0.2);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  
+  /* 移動端字體大小調整 */
+  .mobile-text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+  
+  .mobile-text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+  
+  .mobile-text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+  
+  .mobile-text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+  
+  .mobile-text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  
+  .mobile-text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+  
+  /* 移動端間距調整 */
+  .mobile-spacing {
+    padding: 1rem;
+  }
+  
+  .mobile-spacing-lg {
+    padding: 1.5rem;
+  }
+  
+  .mobile-spacing-xl {
+    padding: 2rem;
+  }
+  
+  /* 移動端卡片優化 */
+  .mobile-card {
+    border-radius: 1rem;
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* 移動端按鈕優化 */
+  .mobile-button {
+    padding: 0.875rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+  }
+  
+  .mobile-button:active {
+    transform: scale(0.98);
+  }
+  
+  /* 移動端導航優化 */
+  .mobile-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 215, 0, 0.2);
+    padding: 0.75rem;
+    z-index: 50;
+  }
+  
+  /* 移動端滾動優化 */
+  .mobile-scroll {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+  
+  /* 移動端圖片優化 */
+  .mobile-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.75rem;
+  }
+  
+  /* 移動端表單優化 */
+  .mobile-input {
+    padding: 0.875rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    width: 100%;
+  }
+  
+  .mobile-input:focus {
+    outline: none;
+    border-color: rgba(255, 215, 0, 0.6);
+    box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.2);
+  }
+}
+
+/* 平板優化 */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .tablet-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .tablet-spacing {
+    padding: 1.5rem;
+  }
+  
+  .tablet-text-adjust {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+}
+
+/* 橫屏手機優化 */
+@media (max-width: 768px) and (orientation: landscape) {
+  .landscape-mobile {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  
+  .landscape-mobile .hero-section {
+    min-height: 100vh;
+    padding: 2rem 1rem;
+  }
+  
+  .landscape-mobile .mobile-nav {
+    display: none;
+  }
+}
+
+/* 高 DPI 螢幕優化 */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .high-dpi-image {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* 深色模式支援 */
+@media (prefers-color-scheme: dark) {
+  .auto-dark {
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+  }
+}
+
+/* 減少動畫偏好 */
+@media (prefers-reduced-motion: reduce) {
+  .respect-motion-preference {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* 可訪問性優化 */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* 焦點指示器 */
+.focus-visible {
+  outline: 2px solid rgba(255, 215, 0, 0.8);
+  outline-offset: 2px;
+}
+
+/* 移動端特定的動畫 */
+@keyframes mobile-slide-up {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.mobile-slide-up {
+  animation: mobile-slide-up 0.3s ease-out;
+}
+
+/* 移動端載入狀態 */
+.mobile-loading {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 215, 0, 0.3);
+  border-radius: 50%;
+  border-top-color: rgba(255, 215, 0, 1);
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

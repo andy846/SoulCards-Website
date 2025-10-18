@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/assets/icons/icon-60.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/icon-180.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/icon-120.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/icon-60.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SoulCards - 神秘塔羅之旅</title>
+    <meta name="description" content="探索神秘的塔羅世界，獲得個人化的占卜指導" />
+    <script type="module">
+      if (import.meta.hot?.on) {
+        import.meta.hot.on('vite:error', (error) => {
+          if (error.err) {
+            console.error(
+              [error.err.message, error.err.frame].filter(Boolean).join('\n'),
+            )
+          }
+        })
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

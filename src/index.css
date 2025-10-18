@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import './styles/mobile.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-mystical-gold/20;
+  }
+  
+  body {
+    @apply bg-cosmic-gradient font-mystical text-white antialiased;
+    min-height: 100vh;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* 神秘按鈕樣式 */
+  .btn-mystical {
+    @apply relative overflow-hidden rounded-xl px-8 py-4 font-semibold text-black transition-all duration-300;
+    @apply bg-gold-gradient hover:scale-105 hover:shadow-gold;
+    @apply before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent;
+    @apply before:translate-x-[-100%] before:transition-transform before:duration-700 hover:before:translate-x-[100%];
+  }
+  
+  .btn-mystical-outline {
+    @apply relative overflow-hidden rounded-xl px-8 py-4 font-semibold text-mystical-gold transition-all duration-300;
+    @apply border-2 border-mystical-gold bg-transparent hover:bg-mystical-gold hover:text-black hover:shadow-gold;
+  }
+  
+  /* 神秘卡片樣式 */
+  .card-mystical {
+    @apply relative overflow-hidden rounded-2xl bg-card-gradient p-6 backdrop-blur-sm;
+    @apply border border-mystical-gold/20 shadow-mystical transition-all duration-300;
+    @apply hover:border-mystical-gold/40 hover:shadow-cosmic hover:scale-105;
+  }
+  
+  /* 星空粒子效果 */
+  .cosmic-particles {
+    @apply absolute inset-0 overflow-hidden pointer-events-none;
+  }
+  
+  .particle {
+    @apply absolute w-1 h-1 bg-mystical-gold rounded-full opacity-70;
+    animation: particle-float 4s ease-in-out infinite;
+  }
+  
+  /* 光暈效果 */
+  .glow-effect {
+    @apply relative;
+  }
+  
+  .glow-effect::before {
+    @apply absolute inset-0 rounded-inherit bg-mystical-gold/20 blur-xl;
+    content: '';
+    z-index: -1;
+  }
+  
+  /* 漸變文字 */
+  .text-gradient {
+    @apply bg-gradient-to-r from-mystical-gold to-mystical-light-gold bg-clip-text text-transparent;
+  }
+  
+  /* 神秘邊框 */
+  .border-mystical {
+    @apply border border-mystical-gold/30;
+    background: linear-gradient(135deg, rgba(102, 51, 153, 0.1), rgba(255, 215, 0, 0.05));
+  }
+}
+
+@layer utilities {
+  /* 自定義滾動條 */
+  .scrollbar-mystical::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .scrollbar-mystical::-webkit-scrollbar-track {
+    @apply bg-mystical-cosmic-black/50;
+  }
+  
+  .scrollbar-mystical::-webkit-scrollbar-thumb {
+    @apply bg-mystical-gold/50 rounded-full;
+  }
+  
+  .scrollbar-mystical::-webkit-scrollbar-thumb:hover {
+    @apply bg-mystical-gold/70;
+  }
+}
+
+:root {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
