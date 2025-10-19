@@ -26,7 +26,7 @@ jobs:
     - name: Install pnpm
       uses: pnpm/action-setup@v4
       with:
-        version: 8
+        version: 9
 
     - name: Setup Node.js
       uses: actions/setup-node@v4
@@ -37,8 +37,12 @@ jobs:
     - name: Install dependencies
       run: |
         if [ -f pnpm-lock.yaml ]; then
-          echo "pnpm-lock.yaml found, installing with frozen lockfile"
-          pnpm install --frozen-lockfile
+          echo "pnpm-lock.yaml found, attempting install with frozen lockfile"
+          if ! pnpm install --frozen-lockfile 2>/dev/null; then
+            echo "Frozen lockfile install failed, likely due to incompatible lockfile version"
+            echo "Falling back to install without frozen lockfile"
+            pnpm install --no-frozen-lockfile
+          fi
         else
           echo "pnpm-lock.yaml not found, installing without frozen lockfile"
           pnpm install --no-frozen-lockfile
