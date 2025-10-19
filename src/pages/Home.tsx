@@ -59,9 +59,13 @@ const Home = () => {
                 transition={{ duration: 0.8 }}
                 className="mb-8"
               >
-                <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-mystical-gradient bg-clip-text text-transparent">
-                  SoulCards
-                </h1>
+                <div className="mb-6 flex justify-center">
+                  <img 
+                    src="/Gemini_Generated_Image_udxp3qudxp3qudxp.png" 
+                    alt="SoulCards Logo" 
+                    className="w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 object-contain"
+                  />
+                </div>
                 <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
                   透過 AI 驅動的塔羅牌占卜探索您的命運。
                   通過古老智慧與現代科技的結合，解開您靈魂的奧秘。

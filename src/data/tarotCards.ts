@@ -13,7 +13,7 @@ export interface TarotCard {
 }
 
 export const tarotCards: TarotCard[] = [
-  // Major Arcana
+  // Major Arcana (22 cards)
   {
     id: 'the_fool',
     name: '愚者',
@@ -41,6 +41,149 @@ export const tarotCards: TarotCard[] = [
     element: 'air'
   },
   {
+    id: 'the_high_priestess',
+    name: '女祭司',
+    nameEn: 'The High Priestess',
+    suit: 'major',
+    number: 2,
+    type: 'major',
+    image: '/tarot-cards/the_high_priestess.png',
+    meaning: '直覺、神秘、潛意識、內在智慧',
+    reversedMeaning: '缺乏直覺、秘密、表面知識',
+    keywords: ['直覺', '神秘', '潛意識', '智慧'],
+    element: 'water'
+  },
+  {
+    id: 'the_empress',
+    name: '皇后',
+    nameEn: 'The Empress',
+    suit: 'major',
+    number: 3,
+    type: 'major',
+    image: '/tarot-cards/the_empress.png',
+    meaning: '豐饒、母性、創造力、自然',
+    reversedMeaning: '依賴、空虛、缺乏成長',
+    keywords: ['豐饒', '母性', '創造', '自然'],
+    element: 'earth'
+  },
+  {
+    id: 'the_emperor',
+    name: '皇帝',
+    nameEn: 'The Emperor',
+    suit: 'major',
+    number: 4,
+    type: 'major',
+    image: '/tarot-cards/the_emperor.png',
+    meaning: '權威、結構、控制、父性',
+    reversedMeaning: '專制、缺乏紀律、不負責任',
+    keywords: ['權威', '結構', '控制', '父性'],
+    element: 'fire'
+  },
+  {
+    id: 'the_hierophant',
+    name: '教皇',
+    nameEn: 'The Hierophant',
+    suit: 'major',
+    number: 5,
+    type: 'major',
+    image: '/tarot-cards/the_hierophant.png',
+    meaning: '傳統、精神指導、宗教、學習',
+    reversedMeaning: '反叛、新方法、個人信念',
+    keywords: ['傳統', '指導', '宗教', '學習'],
+    element: 'earth'
+  },
+  {
+    id: 'the_lovers',
+    name: '戀人',
+    nameEn: 'The Lovers',
+    suit: 'major',
+    number: 6,
+    type: 'major',
+    image: '/tarot-cards/the_lovers.png',
+    meaning: '愛情、關係、選擇、和諧',
+    reversedMeaning: '不和諧、錯誤選擇、關係問題',
+    keywords: ['愛情', '關係', '選擇', '和諧'],
+    element: 'air'
+  },
+  {
+    id: 'the_chariot',
+    name: '戰車',
+    nameEn: 'The Chariot',
+    suit: 'major',
+    number: 7,
+    type: 'major',
+    image: '/tarot-cards/the_chariot.png',
+    meaning: '勝利、意志力、控制、決心',
+    reversedMeaning: '缺乏控制、失敗、缺乏方向',
+    keywords: ['勝利', '意志力', '控制', '決心'],
+    element: 'water'
+  },
+  {
+    id: 'strength',
+    name: '力量',
+    nameEn: 'Strength',
+    suit: 'major',
+    number: 8,
+    type: 'major',
+    image: '/tarot-cards/strength.png',
+    meaning: '內在力量、勇氣、耐心、控制',
+    reversedMeaning: '軟弱、缺乏信心、缺乏自制',
+    keywords: ['力量', '勇氣', '耐心', '控制'],
+    element: 'fire'
+  },
+  {
+    id: 'the_hermit',
+    name: '隱者',
+    nameEn: 'The Hermit',
+    suit: 'major',
+    number: 9,
+    type: 'major',
+    image: '/tarot-cards/the_hermit.png',
+    meaning: '內省、尋求真理、指導、孤獨',
+    reversedMeaning: '孤立、迷失、拒絕幫助',
+    keywords: ['內省', '真理', '指導', '孤獨'],
+    element: 'earth'
+  },
+  {
+    id: 'wheel_of_fortune',
+    name: '命運之輪',
+    nameEn: 'Wheel of Fortune',
+    suit: 'major',
+    number: 10,
+    type: 'major',
+    image: '/tarot-cards/wheel_of_fortune.png',
+    meaning: '命運、變化、循環、好運',
+    reversedMeaning: '厄運、缺乏控制、破壞循環',
+    keywords: ['命運', '變化', '循環', '好運'],
+    element: 'fire'
+  },
+  {
+    id: 'justice',
+    name: '正義',
+    nameEn: 'Justice',
+    suit: 'major',
+    number: 11,
+    type: 'major',
+    image: '/tarot-cards/justice.png',
+    meaning: '公正、平衡、真理、法律',
+    reversedMeaning: '不公正、缺乏平衡、偏見',
+    keywords: ['公正', '平衡', '真理', '法律'],
+    element: 'air'
+  },
+  {
+    id: 'the_hanged_man',
+    name: '倒吊人',
+    nameEn: 'The Hanged Man',
+    suit: 'major',
+    number: 12,
+    type: 'major',
+    image: '/tarot-cards/the_hanged_man.png',
+    meaning: '犧牲、等待、新視角、放手',
+    reversedMeaning: '拖延、抗拒、無意義犧牲',
+    keywords: ['犧牲', '等待', '視角', '放手'],
+    element: 'water'
+  },
+  {
     id: 'death',
     name: '死神',
     nameEn: 'Death',
@@ -53,8 +196,112 @@ export const tarotCards: TarotCard[] = [
     keywords: ['轉變', '重生', '結束', '新開始'],
     element: 'water'
   },
+  {
+    id: 'temperance',
+    name: '節制',
+    nameEn: 'Temperance',
+    suit: 'major',
+    number: 14,
+    type: 'major',
+    image: '/tarot-cards/temperance.png',
+    meaning: '平衡、節制、耐心、和諧',
+    reversedMeaning: '不平衡、過度、缺乏耐心',
+    keywords: ['平衡', '節制', '耐心', '和諧'],
+    element: 'fire'
+  },
+  {
+    id: 'the_devil',
+    name: '惡魔',
+    nameEn: 'The Devil',
+    suit: 'major',
+    number: 15,
+    type: 'major',
+    image: '/tarot-cards/the_devil.png',
+    meaning: '束縛、誘惑、物質主義、依賴',
+    reversedMeaning: '解脫、覺醒、克服誘惑',
+    keywords: ['束縛', '誘惑', '物質', '依賴'],
+    element: 'earth'
+  },
+  {
+    id: 'the_tower',
+    name: '塔',
+    nameEn: 'The Tower',
+    suit: 'major',
+    number: 16,
+    type: 'major',
+    image: '/tarot-cards/the_tower.png',
+    meaning: '突然變化、破壞、啟示、解放',
+    reversedMeaning: '避免災難、恐懼變化、內在動盪',
+    keywords: ['變化', '破壞', '啟示', '解放'],
+    element: 'fire'
+  },
+  {
+    id: 'the_star',
+    name: '星星',
+    nameEn: 'The Star',
+    suit: 'major',
+    number: 17,
+    type: 'major',
+    image: '/tarot-cards/the_star.png',
+    meaning: '希望、靈感、治癒、指導',
+    reversedMeaning: '絕望、缺乏信心、失去方向',
+    keywords: ['希望', '靈感', '治癒', '指導'],
+    element: 'air'
+  },
+  {
+    id: 'the_moon',
+    name: '月亮',
+    nameEn: 'The Moon',
+    suit: 'major',
+    number: 18,
+    type: 'major',
+    image: '/tarot-cards/the_moon.png',
+    meaning: '幻覺、恐懼、潛意識、直覺',
+    reversedMeaning: '克服恐懼、清晰、真相揭露',
+    keywords: ['幻覺', '恐懼', '潛意識', '直覺'],
+    element: 'water'
+  },
+  {
+    id: 'the_sun',
+    name: '太陽',
+    nameEn: 'The Sun',
+    suit: 'major',
+    number: 19,
+    type: 'major',
+    image: '/tarot-cards/the_sun.png',
+    meaning: '快樂、成功、活力、樂觀',
+    reversedMeaning: '暫時挫折、缺乏成功、悲觀',
+    keywords: ['快樂', '成功', '活力', '樂觀'],
+    element: 'fire'
+  },
+  {
+    id: 'judgement',
+    name: '審判',
+    nameEn: 'Judgement',
+    suit: 'major',
+    number: 20,
+    type: 'major',
+    image: '/tarot-cards/judgement.png',
+    meaning: '重生、內在呼喚、寬恕、救贖',
+    reversedMeaning: '自我懷疑、嚴厲判斷、缺乏寬恕',
+    keywords: ['重生', '呼喚', '寬恕', '救贖'],
+    element: 'fire'
+  },
+  {
+    id: 'the_world',
+    name: '世界',
+    nameEn: 'The World',
+    suit: 'major',
+    number: 21,
+    type: 'major',
+    image: '/tarot-cards/the_world.png',
+    meaning: '完成、成就、旅程結束、滿足',
+    reversedMeaning: '未完成、缺乏成就、停滯',
+    keywords: ['完成', '成就', '結束', '滿足'],
+    element: 'earth'
+  },
 
-  // Cups (聖杯)
+  // Minor Arcana - Cups (14 cards)
   {
     id: 'ace_of_cups',
     name: '聖杯王牌',
@@ -121,6 +368,32 @@ export const tarotCards: TarotCard[] = [
     element: 'water'
   },
   {
+    id: 'six_of_cups',
+    name: '聖杯六',
+    nameEn: 'Six of Cups',
+    suit: 'cups',
+    number: 6,
+    type: 'minor',
+    image: '/tarot-cards/six_of_cups.png',
+    meaning: '懷舊、童年、純真、重聚',
+    reversedMeaning: '活在過去、幼稚、缺乏成長',
+    keywords: ['懷舊', '童年', '純真', '重聚'],
+    element: 'water'
+  },
+  {
+    id: 'seven_of_cups',
+    name: '聖杯七',
+    nameEn: 'Seven of Cups',
+    suit: 'cups',
+    number: 7,
+    type: 'minor',
+    image: '/tarot-cards/seven_of_cups.png',
+    meaning: '幻想、選擇、白日夢、迷惑',
+    reversedMeaning: '決心、現實、專注、清晰',
+    keywords: ['幻想', '選擇', '白日夢', '迷惑'],
+    element: 'water'
+  },
+  {
     id: 'eight_of_cups',
     name: '聖杯八',
     nameEn: 'Eight of Cups',
@@ -133,8 +406,86 @@ export const tarotCards: TarotCard[] = [
     keywords: ['放棄', '追求', '精神', '成長'],
     element: 'water'
   },
+  {
+    id: 'nine_of_cups',
+    name: '聖杯九',
+    nameEn: 'Nine of Cups',
+    suit: 'cups',
+    number: 9,
+    type: 'minor',
+    image: '/tarot-cards/nine_of_cups.png',
+    meaning: '滿足、願望實現、快樂、成功',
+    reversedMeaning: '不滿足、貪婪、物質主義',
+    keywords: ['滿足', '願望', '快樂', '成功'],
+    element: 'water'
+  },
+  {
+    id: 'ten_of_cups',
+    name: '聖杯十',
+    nameEn: 'Ten of Cups',
+    suit: 'cups',
+    number: 10,
+    type: 'minor',
+    image: '/tarot-cards/ten_of_cups.png',
+    meaning: '家庭幸福、情感滿足、和諧、完美',
+    reversedMeaning: '家庭問題、不和諧、破碎關係',
+    keywords: ['家庭', '幸福', '滿足', '和諧'],
+    element: 'water'
+  },
+  {
+    id: 'page_of_cups',
+    name: '聖杯侍者',
+    nameEn: 'Page of Cups',
+    suit: 'cups',
+    number: 11,
+    type: 'minor',
+    image: '/tarot-cards/page_of_cups.png',
+    meaning: '創意訊息、直覺發展、情感學習',
+    reversedMeaning: '情感不成熟、創意阻塞、敏感',
+    keywords: ['創意', '直覺', '學習', '敏感'],
+    element: 'water'
+  },
+  {
+    id: 'knight_of_cups',
+    name: '聖杯騎士',
+    nameEn: 'Knight of Cups',
+    suit: 'cups',
+    number: 12,
+    type: 'minor',
+    image: '/tarot-cards/knight_of_cups.png',
+    meaning: '浪漫、魅力、跟隨內心、藝術',
+    reversedMeaning: '情緒化、不切實際、欺騙',
+    keywords: ['浪漫', '魅力', '內心', '藝術'],
+    element: 'water'
+  },
+  {
+    id: 'queen_of_cups',
+    name: '聖杯王后',
+    nameEn: 'Queen of Cups',
+    suit: 'cups',
+    number: 13,
+    type: 'minor',
+    image: '/tarot-cards/queen_of_cups.png',
+    meaning: '同情心、直覺、情感智慧、關懷',
+    reversedMeaning: '情感不穩定、依賴、操縱',
+    keywords: ['同情', '直覺', '智慧', '關懷'],
+    element: 'water'
+  },
+  {
+    id: 'king_of_cups',
+    name: '聖杯國王',
+    nameEn: 'King of Cups',
+    suit: 'cups',
+    number: 14,
+    type: 'minor',
+    image: '/tarot-cards/king_of_cups.png',
+    meaning: '情感平衡、同情心、外交、冷靜',
+    reversedMeaning: '情感操縱、喜怒無常、壓抑',
+    keywords: ['平衡', '同情', '外交', '冷靜'],
+    element: 'water'
+  },
 
-  // Pentacles (錢幣)
+  // Minor Arcana - Pentacles (14 cards)
   {
     id: 'ace_of_pentacles',
     name: '錢幣王牌',
@@ -146,6 +497,32 @@ export const tarotCards: TarotCard[] = [
     meaning: '新的財務機會、物質成功、繁榮',
     reversedMeaning: '錯失機會、貪婪、物質主義',
     keywords: ['財務機會', '成功', '繁榮', '物質'],
+    element: 'earth'
+  },
+  {
+    id: 'two_of_pentacles',
+    name: '錢幣二',
+    nameEn: 'Two of Pentacles',
+    suit: 'pentacles',
+    number: 2,
+    type: 'minor',
+    image: '/tarot-cards/two_of_pentacles.png',
+    meaning: '平衡、適應性、時間管理、靈活性',
+    reversedMeaning: '失去平衡、過度承諾、混亂',
+    keywords: ['平衡', '適應', '管理', '靈活'],
+    element: 'earth'
+  },
+  {
+    id: 'three_of_pentacles',
+    name: '錢幣三',
+    nameEn: 'Three of Pentacles',
+    suit: 'pentacles',
+    number: 3,
+    type: 'minor',
+    image: '/tarot-cards/three_of_pentacles.png',
+    meaning: '團隊合作、技能、學習、建設',
+    reversedMeaning: '缺乏團隊精神、技能不足、懶惰',
+    keywords: ['團隊', '技能', '學習', '建設'],
     element: 'earth'
   },
   {
@@ -175,6 +552,32 @@ export const tarotCards: TarotCard[] = [
     element: 'earth'
   },
   {
+    id: 'six_of_pentacles',
+    name: '錢幣六',
+    nameEn: 'Six of Pentacles',
+    suit: 'pentacles',
+    number: 6,
+    type: 'minor',
+    image: '/tarot-cards/six_of_pentacles.png',
+    meaning: '慷慨、分享、慈善、互惠',
+    reversedMeaning: '自私、債務、不平等交換',
+    keywords: ['慷慨', '分享', '慈善', '互惠'],
+    element: 'earth'
+  },
+  {
+    id: 'seven_of_pentacles',
+    name: '錢幣七',
+    nameEn: 'Seven of Pentacles',
+    suit: 'pentacles',
+    number: 7,
+    type: 'minor',
+    image: '/tarot-cards/seven_of_pentacles.png',
+    meaning: '投資、耐心、長期規劃、評估',
+    reversedMeaning: '缺乏耐心、短視、投資失敗',
+    keywords: ['投資', '耐心', '規劃', '評估'],
+    element: 'earth'
+  },
+  {
     id: 'eight_of_pentacles',
     name: '錢幣八',
     nameEn: 'Eight of Pentacles',
@@ -187,8 +590,86 @@ export const tarotCards: TarotCard[] = [
     keywords: ['技能', '勤奮', '專精', '學習'],
     element: 'earth'
   },
+  {
+    id: 'nine_of_pentacles',
+    name: '錢幣九',
+    nameEn: 'Nine of Pentacles',
+    suit: 'pentacles',
+    number: 9,
+    type: 'minor',
+    image: '/tarot-cards/nine_of_pentacles.png',
+    meaning: '獨立、奢華、自給自足、成就',
+    reversedMeaning: '依賴、財務不安全、炫耀',
+    keywords: ['獨立', '奢華', '自足', '成就'],
+    element: 'earth'
+  },
+  {
+    id: 'ten_of_pentacles',
+    name: '錢幣十',
+    nameEn: 'Ten of Pentacles',
+    suit: 'pentacles',
+    number: 10,
+    type: 'minor',
+    image: '/tarot-cards/ten_of_pentacles.png',
+    meaning: '財富、家族遺產、傳統、安全',
+    reversedMeaning: '財務損失、家族問題、不穩定',
+    keywords: ['財富', '遺產', '傳統', '安全'],
+    element: 'earth'
+  },
+  {
+    id: 'page_of_pentacles',
+    name: '錢幣侍者',
+    nameEn: 'Page of Pentacles',
+    suit: 'pentacles',
+    number: 11,
+    type: 'minor',
+    image: '/tarot-cards/page_of_pentacles.png',
+    meaning: '學習機會、新計劃、實用性、勤奮',
+    reversedMeaning: '缺乏進展、拖延、不切實際',
+    keywords: ['學習', '計劃', '實用', '勤奮'],
+    element: 'earth'
+  },
+  {
+    id: 'knight_of_pentacles',
+    name: '錢幣騎士',
+    nameEn: 'Knight of Pentacles',
+    suit: 'pentacles',
+    number: 12,
+    type: 'minor',
+    image: '/tarot-cards/knight_of_pentacles.png',
+    meaning: '責任感、勤奮、可靠、保守',
+    reversedMeaning: '懶惰、不負責任、停滯',
+    keywords: ['責任', '勤奮', '可靠', '保守'],
+    element: 'earth'
+  },
+  {
+    id: 'queen_of_pentacles',
+    name: '錢幣王后',
+    nameEn: 'Queen of Pentacles',
+    suit: 'pentacles',
+    number: 13,
+    type: 'minor',
+    image: '/tarot-cards/queen_of_pentacles.png',
+    meaning: '實用智慧、慷慨、安全感、母性',
+    reversedMeaning: '物質主義、嫉妒、不安全感',
+    keywords: ['智慧', '慷慨', '安全', '母性'],
+    element: 'earth'
+  },
+  {
+    id: 'king_of_pentacles',
+    name: '錢幣國王',
+    nameEn: 'King of Pentacles',
+    suit: 'pentacles',
+    number: 14,
+    type: 'minor',
+    image: '/tarot-cards/king_of_pentacles.png',
+    meaning: '財務成功、慷慨、安全、可靠',
+    reversedMeaning: '貪婪、物質主義、財務不穩',
+    keywords: ['成功', '慷慨', '安全', '可靠'],
+    element: 'earth'
+  },
 
-  // Swords (寶劍)
+  // Minor Arcana - Swords (14 cards)
   {
     id: 'ace_of_swords',
     name: '寶劍王牌',
@@ -200,6 +681,45 @@ export const tarotCards: TarotCard[] = [
     meaning: '新想法、心智清晰、突破、真理',
     reversedMeaning: '混亂思維、缺乏清晰、誤解',
     keywords: ['新想法', '清晰', '突破', '真理'],
+    element: 'air'
+  },
+  {
+    id: 'two_of_swords',
+    name: '寶劍二',
+    nameEn: 'Two of Swords',
+    suit: 'swords',
+    number: 2,
+    type: 'minor',
+    image: '/tarot-cards/two_of_swords.png',
+    meaning: '困難決定、僵局、平衡、和平',
+    reversedMeaning: '混亂、優柔寡斷、信息過載',
+    keywords: ['決定', '僵局', '平衡', '和平'],
+    element: 'air'
+  },
+  {
+    id: 'three_of_swords',
+    name: '寶劍三',
+    nameEn: 'Three of Swords',
+    suit: 'swords',
+    number: 3,
+    type: 'minor',
+    image: '/tarot-cards/three_of_swords.png',
+    meaning: '心碎、悲傷、背叛、分離',
+    reversedMeaning: '恢復、原諒、釋放痛苦',
+    keywords: ['心碎', '悲傷', '背叛', '分離'],
+    element: 'air'
+  },
+  {
+    id: 'four_of_swords',
+    name: '寶劍四',
+    nameEn: 'Four of Swords',
+    suit: 'swords',
+    number: 4,
+    type: 'minor',
+    image: '/tarot-cards/four_of_swords.png',
+    meaning: '休息、冥想、恢復、和平',
+    reversedMeaning: '不安、焦慮、缺乏休息',
+    keywords: ['休息', '冥想', '恢復', '和平'],
     element: 'air'
   },
   {
@@ -216,6 +736,32 @@ export const tarotCards: TarotCard[] = [
     element: 'air'
   },
   {
+    id: 'six_of_swords',
+    name: '寶劍六',
+    nameEn: 'Six of Swords',
+    suit: 'swords',
+    number: 6,
+    type: 'minor',
+    image: '/tarot-cards/six_of_swords.png',
+    meaning: '過渡、旅行、向前邁進、恢復',
+    reversedMeaning: '抗拒改變、停滯、無法前進',
+    keywords: ['過渡', '旅行', '前進', '恢復'],
+    element: 'air'
+  },
+  {
+    id: 'seven_of_swords',
+    name: '寶劍七',
+    nameEn: 'Seven of Swords',
+    suit: 'swords',
+    number: 7,
+    type: 'minor',
+    image: '/tarot-cards/seven_of_swords.png',
+    meaning: '欺騙、策略、偷竊、逃避',
+    reversedMeaning: '坦白、歸還、面對真相',
+    keywords: ['欺騙', '策略', '偷竊', '逃避'],
+    element: 'air'
+  },
+  {
     id: 'eight_of_swords',
     name: '寶劍八',
     nameEn: 'Eight of Swords',
@@ -228,8 +774,86 @@ export const tarotCards: TarotCard[] = [
     keywords: ['束縛', '限制', '受困', '無助'],
     element: 'air'
   },
+  {
+    id: 'nine_of_swords',
+    name: '寶劍九',
+    nameEn: 'Nine of Swords',
+    suit: 'swords',
+    number: 9,
+    type: 'minor',
+    image: '/tarot-cards/nine_of_swords.png',
+    meaning: '焦慮、恐懼、噩夢、絕望',
+    reversedMeaning: '希望、恢復、克服恐懼',
+    keywords: ['焦慮', '恐懼', '噩夢', '絕望'],
+    element: 'air'
+  },
+  {
+    id: 'ten_of_swords',
+    name: '寶劍十',
+    nameEn: 'Ten of Swords',
+    suit: 'swords',
+    number: 10,
+    type: 'minor',
+    image: '/tarot-cards/ten_of_swords.png',
+    meaning: '背叛、痛苦結束、失敗、底線',
+    reversedMeaning: '恢復、重生、克服困難',
+    keywords: ['背叛', '結束', '失敗', '底線'],
+    element: 'air'
+  },
+  {
+    id: 'page_of_swords',
+    name: '寶劍侍者',
+    nameEn: 'Page of Swords',
+    suit: 'swords',
+    number: 11,
+    type: 'minor',
+    image: '/tarot-cards/page_of_swords.png',
+    meaning: '好奇心、新想法、警覺、溝通',
+    reversedMeaning: '八卦、謊言、缺乏專注',
+    keywords: ['好奇', '想法', '警覺', '溝通'],
+    element: 'air'
+  },
+  {
+    id: 'knight_of_swords',
+    name: '寶劍騎士',
+    nameEn: 'Knight of Swords',
+    suit: 'swords',
+    number: 12,
+    type: 'minor',
+    image: '/tarot-cards/knight_of_swords.png',
+    meaning: '行動、衝動、勇敢、直接',
+    reversedMeaning: '魯莽、不耐煩、缺乏方向',
+    keywords: ['行動', '衝動', '勇敢', '直接'],
+    element: 'air'
+  },
+  {
+    id: 'queen_of_swords',
+    name: '寶劍王后',
+    nameEn: 'Queen of Swords',
+    suit: 'swords',
+    number: 13,
+    type: 'minor',
+    image: '/tarot-cards/queen_of_swords.png',
+    meaning: '獨立、直接、智慧、清晰思維',
+    reversedMeaning: '冷酷、報復、情感封閉',
+    keywords: ['獨立', '直接', '智慧', '清晰'],
+    element: 'air'
+  },
+  {
+    id: 'king_of_swords',
+    name: '寶劍國王',
+    nameEn: 'King of Swords',
+    suit: 'swords',
+    number: 14,
+    type: 'minor',
+    image: '/tarot-cards/king_of_swords.png',
+    meaning: '智慧、權威、真理、公正',
+    reversedMeaning: '操縱、殘酷、缺乏同情心',
+    keywords: ['智慧', '權威', '真理', '公正'],
+    element: 'air'
+  },
 
-  // Wands (權杖)
+  // Minor Arcana - Wands (14 cards)
   {
     id: 'ace_of_wands',
     name: '權杖王牌',
@@ -241,6 +865,45 @@ export const tarotCards: TarotCard[] = [
     meaning: '新項目、創造力、靈感、潛力',
     reversedMeaning: '缺乏方向、創意阻塞、延遲',
     keywords: ['新項目', '創造力', '靈感', '潛力'],
+    element: 'fire'
+  },
+  {
+    id: 'two_of_wands',
+    name: '權杖二',
+    nameEn: 'Two of Wands',
+    suit: 'wands',
+    number: 2,
+    type: 'minor',
+    image: '/tarot-cards/two_of_wands.png',
+    meaning: '規劃、決定、個人力量、控制',
+    reversedMeaning: '缺乏規劃、恐懼、缺乏控制',
+    keywords: ['規劃', '決定', '力量', '控制'],
+    element: 'fire'
+  },
+  {
+    id: 'three_of_wands',
+    name: '權杖三',
+    nameEn: 'Three of Wands',
+    suit: 'wands',
+    number: 3,
+    type: 'minor',
+    image: '/tarot-cards/three_of_wands.png',
+    meaning: '擴展、遠見、領導力、進展',
+    reversedMeaning: '缺乏遠見、延遲、挫折',
+    keywords: ['擴展', '遠見', '領導', '進展'],
+    element: 'fire'
+  },
+  {
+    id: 'four_of_wands',
+    name: '權杖四',
+    nameEn: 'Four of Wands',
+    suit: 'wands',
+    number: 4,
+    type: 'minor',
+    image: '/tarot-cards/four_of_wands.png',
+    meaning: '慶祝、和諧、家庭、成就',
+    reversedMeaning: '家庭問題、缺乏支持、不穩定',
+    keywords: ['慶祝', '和諧', '家庭', '成就'],
     element: 'fire'
   },
   {
@@ -257,6 +920,32 @@ export const tarotCards: TarotCard[] = [
     element: 'fire'
   },
   {
+    id: 'six_of_wands',
+    name: '權杖六',
+    nameEn: 'Six of Wands',
+    suit: 'wands',
+    number: 6,
+    type: 'minor',
+    image: '/tarot-cards/six_of_wands.png',
+    meaning: '勝利、成功、公眾認可、自信',
+    reversedMeaning: '私人成就、自我懷疑、缺乏認可',
+    keywords: ['勝利', '成功', '認可', '自信'],
+    element: 'fire'
+  },
+  {
+    id: 'seven_of_wands',
+    name: '權杖七',
+    nameEn: 'Seven of Wands',
+    suit: 'wands',
+    number: 7,
+    type: 'minor',
+    image: '/tarot-cards/seven_of_wands.png',
+    meaning: '防禦、挑戰、堅持、勇氣',
+    reversedMeaning: '放棄、缺乏信心、被壓倒',
+    keywords: ['防禦', '挑戰', '堅持', '勇氣'],
+    element: 'fire'
+  },
+  {
     id: 'eight_of_wands',
     name: '權杖八',
     nameEn: 'Eight of Wands',
@@ -267,6 +956,84 @@ export const tarotCards: TarotCard[] = [
     meaning: '快速行動、進展、消息、旅行',
     reversedMeaning: '延遲、挫折、缺乏進展',
     keywords: ['快速', '進展', '消息', '旅行'],
+    element: 'fire'
+  },
+  {
+    id: 'nine_of_wands',
+    name: '權杖九',
+    nameEn: 'Nine of Wands',
+    suit: 'wands',
+    number: 9,
+    type: 'minor',
+    image: '/tarot-cards/nine_of_wands.png',
+    meaning: '堅韌、毅力、防禦、最後努力',
+    reversedMeaning: '偏執、固執、缺乏能量',
+    keywords: ['堅韌', '毅力', '防禦', '努力'],
+    element: 'fire'
+  },
+  {
+    id: 'ten_of_wands',
+    name: '權杖十',
+    nameEn: 'Ten of Wands',
+    suit: 'wands',
+    number: 10,
+    type: 'minor',
+    image: '/tarot-cards/ten_of_wands.png',
+    meaning: '負擔、責任、辛勤工作、壓力',
+    reversedMeaning: '釋放負擔、委派、尋求幫助',
+    keywords: ['負擔', '責任', '工作', '壓力'],
+    element: 'fire'
+  },
+  {
+    id: 'page_of_wands',
+    name: '權杖侍者',
+    nameEn: 'Page of Wands',
+    suit: 'wands',
+    number: 11,
+    type: 'minor',
+    image: '/tarot-cards/page_of_wands.png',
+    meaning: '靈感、發現、自由精神、好消息',
+    reversedMeaning: '缺乏方向、拖延、壞消息',
+    keywords: ['靈感', '發現', '自由', '消息'],
+    element: 'fire'
+  },
+  {
+    id: 'knight_of_wands',
+    name: '權杖騎士',
+    nameEn: 'Knight of Wands',
+    suit: 'wands',
+    number: 12,
+    type: 'minor',
+    image: '/tarot-cards/knight_of_wands.png',
+    meaning: '冒險、衝動、熱情、自由',
+    reversedMeaning: '魯莽、不耐煩、缺乏自制',
+    keywords: ['冒險', '衝動', '熱情', '自由'],
+    element: 'fire'
+  },
+  {
+    id: 'queen_of_wands',
+    name: '權杖王后',
+    nameEn: 'Queen of Wands',
+    suit: 'wands',
+    number: 13,
+    type: 'minor',
+    image: '/tarot-cards/queen_of_wands.png',
+    meaning: '自信、熱情、決心、獨立',
+    reversedMeaning: '自私、嫉妒、缺乏自信',
+    keywords: ['自信', '熱情', '決心', '獨立'],
+    element: 'fire'
+  },
+  {
+    id: 'king_of_wands',
+    name: '權杖國王',
+    nameEn: 'King of Wands',
+    suit: 'wands',
+    number: 14,
+    type: 'minor',
+    image: '/tarot-cards/king_of_wands.png',
+    meaning: '領導力、遠見、企業家精神、榮譽',
+    reversedMeaning: '專制、不耐煩、魯莽',
+    keywords: ['領導', '遠見', '企業', '榮譽'],
     element: 'fire'
   }
 ]
