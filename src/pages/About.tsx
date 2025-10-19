@@ -51,23 +51,23 @@ const About = () => {
   const milestones = [
     {
       year: "2022",
-      title: "The Vision",
-      description: "Founded with the mission to democratize spiritual guidance through AI"
+      title: "願景誕生",
+      description: "以透過 AI 普及靈性指導為使命而創立"
     },
     {
       year: "2023",
-      title: "Beta Launch",
-      description: "Released to 1,000 beta users, receiving overwhelming positive feedback"
+      title: "測試版發布",
+      description: "向 1,000 名測試用戶發布，獲得壓倒性的正面回饋"
     },
     {
       year: "2024",
-      title: "Global Release",
-      description: "Launched worldwide with 50,000+ users in the first month"
+      title: "全球發布",
+      description: "在全球發布，首月即擁有超過 50,000 名用戶"
     },
     {
       year: "2024",
-      title: "AI Breakthrough",
-      description: "Achieved 95% accuracy in personalized reading interpretations"
+      title: "AI 技術突破",
+      description: "在個人化占卜解讀方面達到 95% 的準確率"
     }
   ]
 
@@ -144,21 +144,21 @@ const About = () => {
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                <h2 className="text-4xl font-bold mb-6 text-white">Our Story</h2>
+                <h2 className="text-4xl font-bold mb-6 text-white">我們的故事</h2>
                 <div className="space-y-6 text-gray-300">
                   <p>
-                    SoulCards was born from a simple yet profound realization: while technology has transformed 
-                    every aspect of our lives, spiritual guidance remained largely unchanged for centuries.
+                    SoulCards 誕生於一個簡單而深刻的認知：雖然科技已經改變了我們生活的每個層面，
+                    但靈性指導在數個世紀以來卻基本保持不變。
                   </p>
                   <p>
-                    Our founder, Sarah Chen, a master tarot reader with over two decades of experience, 
-                    envisioned a world where the wisdom of tarot could reach anyone, anywhere, at any time. 
-                    But not just any digital tarot—one that truly understood the seeker's journey.
+                    我們的創辦人 Sarah Chen 是一位擁有二十多年經驗的塔羅大師，
+                    她設想了一個塔羅智慧能夠觸及任何人、任何地方、任何時間的世界。
+                    但不只是任何數位塔羅——而是真正理解探索者旅程的塔羅。
                   </p>
                   <p>
-                    Partnering with AI experts and spiritual practitioners, we've created something unprecedented: 
-                    an AI that doesn't just interpret cards, but understands the deeper patterns of human experience, 
-                    offering guidance that's both technologically advanced and spiritually authentic.
+                    與 AI 專家和靈性實踐者合作，我們創造了前所未有的東西：
+                    一個不僅僅解讀卡牌，更能理解人類經驗深層模式的 AI，
+                    提供既技術先進又靈性真實的指導。
                   </p>
                 </div>
               </motion.div>
@@ -198,9 +198,9 @@ const About = () => {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl font-bold mb-6 text-white">Our Values</h2>
+              <h2 className="text-4xl font-bold mb-6 text-white">我們的價值觀</h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                These core principles guide everything we do at SoulCards
+                這些核心原則指導著我們在 SoulCards 所做的一切
               </p>
             </motion.div>
 
@@ -235,9 +235,9 @@ const About = () => {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl font-bold mb-6 text-white">Meet Our Team</h2>
+              <h2 className="text-4xl font-bold mb-6 text-white">認識我們的團隊</h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Passionate individuals dedicated to bringing you the best spiritual guidance experience
+                致力於為您帶來最佳靈性指導體驗的熱情個人
               </p>
             </motion.div>
 
@@ -277,9 +277,9 @@ const About = () => {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl font-bold mb-6 text-white">Our Journey</h2>
+              <h2 className="text-4xl font-bold mb-6 text-white">我們的旅程</h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Key milestones in our mission to revolutionize spiritual guidance
+                我們革新靈性指導使命中的重要里程碑
               </p>
             </motion.div>
 
@@ -321,18 +321,18 @@ const About = () => {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl font-bold mb-6 text-white">Our Impact</h2>
+              <h2 className="text-4xl font-bold mb-6 text-white">我們的影響力</h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Numbers that reflect our commitment to serving the spiritual community
+                反映我們致力於服務靈性社群承諾的數字
               </p>
             </motion.div>
 
             <div className="grid md:grid-cols-4 gap-8">
               {[
-                { number: "100K+", label: "Active Users", icon: Users },
-                { number: "1M+", label: "Readings Given", icon: Award },
-                { number: "50+", label: "Countries", icon: Globe },
-                { number: "4.9", label: "App Store Rating", icon: Heart }
+                { number: "100K+", label: "活躍用戶", icon: Users },
+                { number: "1M+", label: "提供占卜", icon: Award },
+                { number: "50+", label: "國家", icon: Globe },
+                { number: "4.9", label: "App Store 評分", icon: Heart }
               ].map((stat, index) => (
                 <motion.div
                   key={index}
