@@ -70,22 +70,22 @@ const Pricing = () => {
   const testimonials = [
     {
       name: "Emma Thompson",
-      plan: "Premium",
-      text: "The Premium plan has transformed my spiritual practice. The AI insights are incredibly detailed and accurate.",
+      plan: "進階版",
+      text: "進階版方案徹底改變了我的靈性修行。AI 洞察非常詳細且準確。",
       rating: 5,
       avatar: "🌟"
     },
     {
       name: "David Chen",
-      plan: "Lifetime",
-      text: "Best investment I've made for my spiritual journey. The lifetime plan pays for itself within a year.",
+      plan: "終身版",
+      text: "這是我為靈性旅程做過最好的投資。終身版在一年內就回本了。",
       rating: 5,
       avatar: "🔮"
     },
     {
       name: "Sarah Williams",
-      plan: "Premium",
-      text: "The unlimited readings and advanced spreads have helped me gain deeper insights into my life path.",
+      plan: "進階版",
+      text: "無限制的占卜和進階牌陣幫助我對人生道路獲得更深層的洞察。",
       rating: 5,
       avatar: "✨"
     }
@@ -137,7 +137,7 @@ const Pricing = () => {
                   {plan.popular && (
                     <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                       <span className="bg-mystical-gradient text-white px-4 py-2 rounded-full text-sm font-semibold">
-                        Most Popular
+                        最受歡迎
                       </span>
                     </div>
                   )}
@@ -196,10 +196,10 @@ const Pricing = () => {
               className="text-center mb-16"
             >
               <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-                Feature Comparison
+                功能比較
               </h2>
               <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-                See exactly what's included in each plan to make the best choice for your needs.
+                查看每個方案包含的詳細功能，為您的需求做出最佳選擇。
               </p>
             </motion.div>
 
@@ -207,22 +207,22 @@ const Pricing = () => {
               <table className="w-full max-w-4xl mx-auto">
                 <thead>
                   <tr className="border-b border-mystical-700">
-                    <th className="text-left py-4 px-6 text-white font-semibold">Features</th>
-                    <th className="text-center py-4 px-6 text-white font-semibold">Free</th>
-                    <th className="text-center py-4 px-6 text-white font-semibold">Premium</th>
-                    <th className="text-center py-4 px-6 text-white font-semibold">Lifetime</th>
+                    <th className="text-left py-4 px-6 text-white font-semibold">功能</th>
+                    <th className="text-center py-4 px-6 text-white font-semibold">免費版</th>
+                    <th className="text-center py-4 px-6 text-white font-semibold">進階版</th>
+                    <th className="text-center py-4 px-6 text-white font-semibold">終身版</th>
                   </tr>
                 </thead>
                 <tbody className="text-gray-300">
                   {[
-                    { feature: "Daily Readings", free: "3", premium: "Unlimited", lifetime: "Unlimited" },
-                    { feature: "Tarot Spreads", free: "Basic", premium: "All", lifetime: "All + Custom" },
-                    { feature: "AI Insights", free: "Basic", premium: "Advanced", lifetime: "Advanced" },
-                    { feature: "Reading History", free: "7 days", premium: "Unlimited", lifetime: "Unlimited" },
-                    { feature: "Personal Journal", free: "❌", premium: "✅", lifetime: "✅" },
-                    { feature: "Priority Support", free: "❌", premium: "✅", lifetime: "VIP" },
-                    { feature: "Ad-free Experience", free: "❌", premium: "✅", lifetime: "✅" },
-                    { feature: "Export Data", free: "❌", premium: "❌", lifetime: "✅" }
+                    { feature: "每日占卜", free: "3次", premium: "無限制", lifetime: "無限制" },
+                    { feature: "塔羅牌陣", free: "基礎", premium: "全部", lifetime: "全部 + 自訂" },
+                    { feature: "AI 洞察", free: "基礎", premium: "進階", lifetime: "進階" },
+                    { feature: "占卜記錄", free: "7天", premium: "無限制", lifetime: "無限制" },
+                    { feature: "個人日誌", free: "❌", premium: "✅", lifetime: "✅" },
+                    { feature: "優先支援", free: "❌", premium: "✅", lifetime: "VIP" },
+                    { feature: "無廣告體驗", free: "❌", premium: "✅", lifetime: "✅" },
+                    { feature: "資料匯出", free: "❌", premium: "❌", lifetime: "✅" }
                   ].map((row, index) => (
                     <motion.tr
                       key={index}
@@ -255,7 +255,7 @@ const Pricing = () => {
               className="text-center mb-16"
             >
               <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-                What Our Subscribers Say
+                用戶評價
               </h2>
             </motion.div>
 
@@ -277,7 +277,7 @@ const Pricing = () => {
                   </div>
                   <p className="text-gray-300 mb-4">"{testimonial.text}"</p>
                   <p className="text-mystical-400 font-semibold">{testimonial.name}</p>
-                  <p className="text-gray-500 text-sm">{testimonial.plan} User</p>
+                  <p className="text-gray-500 text-sm">{testimonial.plan}用戶</p>
                 </motion.div>
               ))}
             </div>
@@ -295,27 +295,27 @@ const Pricing = () => {
               className="text-center mb-16"
             >
               <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-                Frequently Asked Questions
+                常見問題
               </h2>
             </motion.div>
 
             <div className="max-w-3xl mx-auto space-y-6">
               {[
                 {
-                  question: "Can I cancel my subscription anytime?",
-                  answer: "Yes, you can cancel your Premium subscription at any time. You'll continue to have access until the end of your billing period."
+                  question: "我可以隨時取消訂閱嗎？",
+                  answer: "是的，您可以隨時取消進階版訂閱。您將繼續享有服務直到當前計費週期結束。"
                 },
                 {
-                  question: "Is there a free trial for Premium?",
-                  answer: "Yes! We offer a 7-day free trial for Premium so you can experience all the advanced features before committing."
+                  question: "進階版有免費試用嗎？",
+                  answer: "有的！我們提供 7 天免費試用，讓您在承諾之前體驗所有進階功能。"
                 },
                 {
-                  question: "What happens to my data if I downgrade?",
-                  answer: "Your reading history and journal entries are preserved. You'll just have limited access to some features until you upgrade again."
+                  question: "如果我降級，我的資料會怎樣？",
+                  answer: "您的占卜記錄和日誌條目會被保留。您只是對某些功能的存取權限會受到限制，直到您再次升級。"
                 },
                 {
-                  question: "Is the Lifetime plan really lifetime?",
-                  answer: "Absolutely! The Lifetime plan gives you permanent access to SoulCards Premium features, including future updates and new features."
+                  question: "終身版真的是終身的嗎？",
+                  answer: "絕對是！終身版讓您永久存取 SoulCards 進階功能，包括未來的更新和新功能。"
                 }
               ].map((faq, index) => (
                 <motion.div
@@ -346,17 +346,17 @@ const Pricing = () => {
               className="text-center"
             >
               <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-                Start Your Journey Today
+                立即開始您的旅程
               </h2>
               <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
-                Join thousands of users who have unlocked their spiritual potential with SoulCards.
+                加入數千名已透過 SoulCards 釋放靈性潛能的用戶。
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button className="cosmic-button text-lg px-8 py-4">
-                  Start Free Trial
+                  開始免費試用
                 </button>
                 <button className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-void-950 px-8 py-4 rounded-lg transition-all duration-300">
-                  Download Free Version
+                  下載免費版本
                 </button>
               </div>
             </motion.div>
