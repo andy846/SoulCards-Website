@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://soulcards.github.io/website/sitemap.xml
+Sitemap: https://andy846.github.io/SoulCards-Website/sitemap.xml
