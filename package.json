@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "homepage": "https://soulcards.github.io/website",
+  "homepage": "https://andy846.github.io/SoulCards-Website/",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
