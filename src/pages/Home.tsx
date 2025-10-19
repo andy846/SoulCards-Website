@@ -76,7 +76,7 @@ const Home = () => {
               >
                 <div className="relative inline-block">
                   <img 
-                    src="/materials/the_fool.png" 
+                    src="/tarot-cards/the_fool.png" 
                     alt="The Fool Tarot Card" 
                     className="tarot-card w-48 h-72 mx-auto floating-card"
                   />
