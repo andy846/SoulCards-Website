@@ -138,9 +138,9 @@ const Features = () => {
             {/* Additional Features Screenshots */}
             <div className="grid md:grid-cols-3 gap-8">
               {[
-                { src: "/materials/IMG_0776.PNG", title: "多種占卜方式", description: "選擇適合您問題的占卜類型" },
-                { src: "/materials/IMG_0777.PNG", title: "分享洞察", description: "與朋友分享您的靈性發現" },
-                { src: "/materials/IMG_0778.PNG", title: "靈性社群", description: "加入志同道合的靈性探索者" }
+                { src: "/app-screenshots/IMG_0776.PNG", title: "多種占卜方式", description: "選擇適合您問題的占卜類型" },
+                { src: "/app-screenshots/IMG_0777.PNG", title: "分享洞察", description: "與朋友分享您的靈性發現" },
+                { src: "/app-screenshots/IMG_0778.PNG", title: "靈性社群", description: "加入志同道合的靈性探索者" }
               ].map((feature, index) => (
                 <motion.div
                   key={index + 4}
@@ -183,10 +183,10 @@ const Features = () => {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
               {[
-                { src: "/materials/IMG_0772.PNG", title: "牌卡選擇", description: "用直觀手勢選擇您的牌卡" },
-                { src: "/materials/IMG_0773.PNG", title: "AI 分析", description: "觀看 AI 解釋您的牌陣" },
-                { src: "/materials/IMG_0774.PNG", title: "詳細洞察", description: "獲得全面的占卜解讀" },
-                { src: "/materials/IMG_0775.PNG", title: "個人日誌", description: "追蹤您的靈性之旅" }
+                { src: "/app-screenshots/IMG_0772.PNG", title: "牌卡選擇", description: "用直觀手勢選擇您的牌卡" },
+                { src: "/app-screenshots/IMG_0773.PNG", title: "AI 分析", description: "觀看 AI 解釋您的牌陣" },
+                { src: "/app-screenshots/IMG_0774.PNG", title: "詳細洞察", description: "獲得全面的占卜解讀" },
+                { src: "/app-screenshots/IMG_0775.PNG", title: "個人日誌", description: "追蹤您的靈性之旅" }
               ].map((demo, index) => (
                 <motion.div
                   key={index}
