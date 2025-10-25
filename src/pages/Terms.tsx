@@ -1,86 +1,77 @@
-import { motion } from 'framer-motion'
-import { Helmet } from 'react-helmet-async'
-import { FileText, Scale, AlertTriangle, CheckCircle } from 'lucide-react'
+import React from 'react';
+import { Helmet } from 'react-helmet-async';
+import { motion } from 'framer-motion';
+import { Shield, Users, Heart, Scale, FileText, AlertTriangle } from 'lucide-react';
 
 const Terms = () => {
+  const keyPoints = [
+    {
+      icon: <Scale className="w-8 h-8 text-purple-400" />,
+      title: "公平使用",
+      description: "我們的服務條款確保所有用戶都能公平地享受 SoulCards 的功能"
+    },
+    {
+      icon: <Heart className="w-8 h-8 text-pink-400" />,
+      title: "娛樂目的",
+      description: "塔羅占卜僅供娛樂和個人反思，不構成專業建議"
+    },
+    {
+      icon: <Shield className="w-8 h-8 text-blue-400" />,
+      title: "您的權利",
+      description: "我們尊重並保護您的用戶權利和個人資料"
+    }
+  ];
+
   return (
     <>
       <Helmet>
-        <title>服務條款 - SoulCards AI 塔羅占卜</title>
-        <meta name="description" content="閱讀 SoulCards 的服務條款。了解使用我們 AI 驅動的塔羅占卜應用程式時的權利和責任。" />
+        <title>服務條款 - SoulCards</title>
+        <meta name="description" content="SoulCards 服務條款 - 了解我們的使用條款、用戶權利和責任" />
       </Helmet>
 
-      <div className="min-h-screen pt-20">
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
         {/* Hero Section */}
-        <section className="py-20 relative overflow-hidden">
-          <div className="absolute inset-0 bg-cosmic-gradient opacity-10"></div>
-          
-          <div className="container mx-auto px-6 relative z-10">
+        <section className="relative py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
             <motion.div
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-center mb-16"
             >
-              <div className="w-20 h-20 bg-cosmic-gradient rounded-full flex items-center justify-center mx-auto mb-6">
-                <FileText className="w-10 h-10 text-white" />
-              </div>
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
+              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
                 服務條款
               </h1>
-              <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
-                Clear and fair terms that govern your use of SoulCards. 
-                We believe in transparency and mutual respect.
+              <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                歡迎使用 SoulCards 塔羅占卜應用。使用本服務即表示您同意遵守本服務條款。請仔細閱讀以下條款。
               </p>
-              <p className="text-gray-400 mt-4">Last updated: January 2024</p>
+              <div className="text-sm text-gray-400">
+                最後更新：2025年
+              </div>
             </motion.div>
           </div>
         </section>
 
         {/* Key Points */}
-        <section className="py-20">
-          <div className="container mx-auto px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl font-bold mb-6 text-white">Key Points</h2>
-            </motion.div>
-
-            <div className="grid md:grid-cols-3 gap-8 mb-16">
-              {[
-                {
-                  icon: Scale,
-                  title: "Fair Usage",
-                  description: "Use SoulCards responsibly and respect other users' experience. No abuse or misuse of our services."
-                },
-                {
-                  icon: AlertTriangle,
-                  title: "Entertainment Purpose",
-                  description: "SoulCards is for entertainment and self-reflection. Not a substitute for professional advice."
-                },
-                {
-                  icon: CheckCircle,
-                  title: "Your Rights",
-                  description: "You retain ownership of your personal readings and can export or delete your data at any time."
-                }
-              ].map((point, index) => (
+        <section className="py-16 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-8">
+              {keyPoints.map((point, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.2 }}
-                  viewport={{ once: true }}
-                  className="mystical-card text-center"
+                  className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20"
                 >
-                  <div className="w-16 h-16 bg-cosmic-gradient rounded-full flex items-center justify-center mx-auto mb-4">
-                    <point.icon className="w-8 h-8 text-white" />
+                  <div className="flex items-center mb-4">
+                    {point.icon}
+                    <h3 className="text-xl font-semibold text-white ml-3">
+                      {point.title}
+                    </h3>
                   </div>
-                  <h3 className="text-xl font-semibold text-white mb-4">{point.title}</h3>
-                  <p className="text-gray-300">{point.description}</p>
+                  <p className="text-gray-300">
+                    {point.description}
+                  </p>
                 </motion.div>
               ))}
             </div>
@@ -88,162 +79,399 @@ const Terms = () => {
         </section>
 
         {/* Terms Content */}
-        <section className="py-20 bg-void-900/50">
-          <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto">
-              <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-                className="space-y-12"
-              >
-                <div className="mystical-card">
-                  <h2 className="text-2xl font-bold text-white mb-6">1. Acceptance of Terms</h2>
-                  <div className="space-y-4 text-gray-300">
-                    <p>By downloading, installing, or using SoulCards ("the App"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, please do not use the App.</p>
-                    <p>These Terms constitute a legally binding agreement between you and SoulCards ("we," "us," or "our"). We may update these Terms from time to time, and your continued use of the App constitutes acceptance of any changes.</p>
-                  </div>
+        <section className="py-16 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20"
+            >
+              <div className="prose prose-invert max-w-none">
+                
+                <div className="mb-8 p-6 bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg border border-purple-400/30 relative">
+                  <img 
+                    src="/icon-1024.png" 
+                    alt="SoulCards Icon" 
+                    className="absolute top-4 right-4 w-12 h-12 opacity-30 rounded-lg"
+                  />
+                  <h2 className="text-2xl font-bold text-white mb-4 flex items-center">
+                    <AlertTriangle className="w-6 h-6 mr-3 text-yellow-400" />
+                    重要提示
+                  </h2>
+                  <p className="text-gray-300">
+                    歡迎使用 SoulCards 塔羅占卜應用（以下簡稱「本服務」）。使用本服務即表示您同意遵守本服務條款。請仔細閱讀以下條款。
+                  </p>
                 </div>
 
-                <div className="mystical-card">
-                  <h2 className="text-2xl font-bold text-white mb-6">2. Description of Service</h2>
-                  <div className="space-y-4 text-gray-300">
-                    <p><strong className="text-white">SoulCards</strong> is an AI-powered tarot reading application that provides:</p>
-                    <ul className="list-disc list-inside space-y-2 ml-4">
-                      <li>Digital tarot card readings with AI-generated interpretations</li>
-                      <li>Personalized insights based on your reading history</li>
-                      <li>Daily guidance and spiritual reflection tools</li>
-                      <li>Reading history and progress tracking</li>
-                      <li>Premium features for enhanced experience</li>
+                <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
+                  <FileText className="w-6 h-6 mr-3 text-purple-400" />
+                  1. 接受條款
+                </h2>
+                <div className="text-gray-300 mb-6 space-y-3">
+                  <p>1.1 通過下載、安裝、訪問或使用 SoulCards，您同意受本服務條款約束。</p>
+                  <p>1.2 如果您不同意任何條款，請勿使用本服務。</p>
+                  <p>1.3 我們保留隨時修改本條款的權利，修改後的條款將在應用內公佈。</p>
+                </div>
+
+                <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
+                  <FileText className="w-6 h-6 mr-3 text-purple-400" />
+                  2. 服務描述
+                </h2>
+                <div className="text-gray-300 mb-6">
+                  <h3 className="text-lg font-semibold text-white mb-3">2.1 塔羅占卜服務</h3>
+                  <ul className="space-y-2 mb-4">
+                    <li>• 提供數字塔羅牌占卜功能</li>
+                    <li>• 包含多種塔羅牌陣和解讀</li>
+                    <li>• 保存占卜歷史和個人筆記</li>
+                  </ul>
+                  
+                  <h3 className="text-lg font-semibold text-white mb-3">2.2 AI 解讀服務</h3>
+                  <ul className="space-y-2 mb-4">
+                    <li>• 使用人工智能技術提供塔羅牌解讀</li>
+                    <li>• AI 建議僅供參考，不構成專業建議</li>
+                    <li>• 不保證 AI 解讀的準確性或完整性</li>
+                  </ul>
+
+                  <h3 className="text-lg font-semibold text-white mb-3">2.3 訂閱服務</h3>
+                  <ul className="space-y-2 mb-4">
+                    <li>• 提供免費和付費訂閱選項</li>
+                    <li>• 付費訂閱通過 Apple App Store 處理</li>
+                    <li>• 訂閱自動續訂，除非提前取消</li>
+                  </ul>
+
+                  <h3 className="text-lg font-semibold text-white mb-3">2.4 社交功能</h3>
+                  <ul className="space-y-2">
+                    <li>• 用戶檔案和頭像上傳</li>
+                    <li>• 占卜結果分享（可選）</li>
+                    <li>• 社區互動功能</li>
+                  </ul>
+                </div>
+
+                <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
+                  <Users className="w-6 h-6 mr-3 text-purple-400" />
+                  3. 用戶帳戶
+                </h2>
+                <div className="text-gray-300 mb-6">
+                  <h3 className="text-lg font-semibold text-white mb-3">3.1 註冊要求</h3>
+                  <ul className="space-y-2 mb-4">
+                    <li>• 提供準確、完整和最新的註冊信息</li>
+                    <li>• 年滿 13 歲或在監護人同意下使用</li>
+                    <li>• 對帳戶活動負全責</li>
+                  </ul>
+
+                  <h3 className="text-lg font-semibold text-white mb-3">3.2 帳戶安全</h3>
+                  <ul className="space-y-2 mb-4">
+                    <li>• 保護您的登入憑證</li>
+                    <li>• 立即通知任何未經授權的使用</li>
+                    <li>• 我們對因您未遵守安全義務導致的損失不負責</li>
+                  </ul>
+
+                  <h3 className="text-lg font-semibold text-white mb-3">3.3 第三方登入</h3>
+                  <ul className="space-y-2">
+                    <li>• 支持 Apple Sign-In 和 Google Sign-In</li>
+                    <li>• 受第三方服務條款和私隱政策約束</li>
+                    <li>• 我們不對第三方服務的問題負責</li>
+                  </ul>
+                </div>
+
+                <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
+                  <FileText className="w-6 h-6 mr-3 text-purple-400" />
+                  4. 訂閱和付款
+                </h2>
+                <div className="text-gray-300 mb-6">
+                  <h3 className="text-lg font-semibold text-white mb-3">4.1 訂閱類型</h3>
+                  <div className="mb-4">
+                    <p className="font-semibold text-purple-300 mb-2">免費版：</p>
+                    <ul className="space-y-2 mb-4">
+                      <li>• 基本塔羅牌占卜功能</li>
+                      <li>• 有限的每日占卜次數</li>
+                      <li>• 基本歷史記錄保存</li>
                     </ul>
-                    <p><strong className="text-white">Important:</strong> SoulCards is intended for entertainment, self-reflection, and spiritual exploration purposes only. It is not a substitute for professional medical, psychological, legal, or financial advice.</p>
-                  </div>
-                </div>
-
-                <div className="mystical-card">
-                  <h2 className="text-2xl font-bold text-white mb-6">3. User Accounts and Registration</h2>
-                  <div className="space-y-4 text-gray-300">
-                    <p><strong className="text-white">Account Creation:</strong> To access certain features, you may need to create an account. You must provide accurate and complete information.</p>
-                    <p><strong className="text-white">Account Security:</strong> You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account.</p>
-                    <p><strong className="text-white">Age Requirement:</strong> You must be at least 13 years old to use SoulCards. Users under 18 should have parental consent.</p>
-                    <p><strong className="text-white">One Account Per User:</strong> You may only create one account per person. Multiple accounts may be suspended or terminated.</p>
-                  </div>
-                </div>
-
-                <div className="mystical-card">
-                  <h2 className="text-2xl font-bold text-white mb-6">4. Acceptable Use</h2>
-                  <div className="space-y-4 text-gray-300">
-                    <p><strong className="text-white">You agree to use SoulCards only for lawful purposes and in accordance with these Terms. You agree NOT to:</strong></p>
-                    <ul className="list-disc list-inside space-y-2 ml-4">
-                      <li>Use the App for any illegal or unauthorized purpose</li>
-                      <li>Attempt to gain unauthorized access to our systems or other users' accounts</li>
-                      <li>Reverse engineer, decompile, or disassemble the App</li>
-                      <li>Use automated systems (bots, scripts) to access the App</li>
-                      <li>Share your account credentials with others</li>
-                      <li>Upload malicious code or attempt to disrupt the service</li>
-                      <li>Violate any applicable laws or regulations</li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div className="mystical-card">
-                  <h2 className="text-2xl font-bold text-white mb-6">5. Subscription and Payment Terms</h2>
-                  <div className="space-y-4 text-gray-300">
-                    <p><strong className="text-white">Free Version:</strong> SoulCards offers a free version with basic features and limited daily readings.</p>
-                    <p><strong className="text-white">Premium Subscription:</strong> Premium features are available through monthly or annual subscriptions. Pricing is displayed in the App and may vary by region.</p>
-                    <p><strong className="text-white">Billing:</strong> Subscriptions are billed in advance and automatically renew unless cancelled. You can cancel anytime through your device's subscription settings.</p>
-                    <p><strong className="text-white">Refunds:</strong> Refunds are handled according to the app store's refund policy (Apple App Store or Google Play Store).</p>
-                    <p><strong className="text-white">Price Changes:</strong> We may change subscription prices with 30 days' notice. Changes will not affect your current billing cycle.</p>
-                  </div>
-                </div>
-
-                <div className="mystical-card">
-                  <h2 className="text-2xl font-bold text-white mb-6">6. Intellectual Property</h2>
-                  <div className="space-y-4 text-gray-300">
-                    <p><strong className="text-white">Our Content:</strong> SoulCards, including its design, features, tarot card images, AI algorithms, and content, is owned by us and protected by copyright and other intellectual property laws.</p>
-                    <p><strong className="text-white">Your Content:</strong> You retain ownership of your personal readings and insights. However, you grant us a license to use anonymous, aggregated data to improve our services.</p>
-                    <p><strong className="text-white">Limited License:</strong> We grant you a limited, non-exclusive, non-transferable license to use the App for personal, non-commercial purposes.</p>
-                    <p><strong className="text-white">Trademarks:</strong> SoulCards and related logos are our trademarks. You may not use them without our written permission.</p>
-                  </div>
-                </div>
-
-                <div className="mystical-card">
-                  <h2 className="text-2xl font-bold text-white mb-6">7. Privacy and Data Protection</h2>
-                  <div className="space-y-4 text-gray-300">
-                    <p>Your privacy is important to us. Our collection and use of your personal information is governed by our Privacy Policy, which is incorporated into these Terms by reference.</p>
-                    <p>By using SoulCards, you consent to the collection and use of your information as described in our Privacy Policy.</p>
-                  </div>
-                </div>
-
-                <div className="mystical-card">
-                  <h2 className="text-2xl font-bold text-white mb-6">8. Disclaimers and Limitations</h2>
-                  <div className="space-y-4 text-gray-300">
-                    <p><strong className="text-white">Entertainment Only:</strong> SoulCards is provided for entertainment and self-reflection purposes. Tarot readings should not be used as the sole basis for making important life decisions.</p>
-                    <p><strong className="text-white">No Professional Advice:</strong> SoulCards does not provide medical, psychological, legal, financial, or other professional advice. Consult qualified professionals for such matters.</p>
-                    <p><strong className="text-white">AI Limitations:</strong> Our AI-generated interpretations are based on algorithms and may not always be accurate or applicable to your specific situation.</p>
-                    <p><strong className="text-white">Service Availability:</strong> We strive to maintain service availability but cannot guarantee uninterrupted access. We may suspend service for maintenance or other reasons.</p>
-                  </div>
-                </div>
-
-                <div className="mystical-card">
-                  <h2 className="text-2xl font-bold text-white mb-6">9. Limitation of Liability</h2>
-                  <div className="space-y-4 text-gray-300">
-                    <p>To the maximum extent permitted by law, SoulCards and its affiliates shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of profits, data, or other intangible losses.</p>
-                    <p>Our total liability to you for any claims arising from your use of SoulCards shall not exceed the amount you paid us in the 12 months preceding the claim.</p>
-                  </div>
-                </div>
-
-                <div className="mystical-card">
-                  <h2 className="text-2xl font-bold text-white mb-6">10. Termination</h2>
-                  <div className="space-y-4 text-gray-300">
-                    <p><strong className="text-white">By You:</strong> You may stop using SoulCards at any time and delete your account through the App settings.</p>
-                    <p><strong className="text-white">By Us:</strong> We may suspend or terminate your account if you violate these Terms or for other reasons at our discretion.</p>
-                    <p><strong className="text-white">Effect of Termination:</strong> Upon termination, your right to use the App ceases immediately. We may delete your account data according to our data retention policy.</p>
-                  </div>
-                </div>
-
-                <div className="mystical-card">
-                  <h2 className="text-2xl font-bold text-white mb-6">11. Governing Law and Disputes</h2>
-                  <div className="space-y-4 text-gray-300">
-                    <p>These Terms are governed by the laws of [Jurisdiction], without regard to conflict of law principles.</p>
-                    <p>Any disputes arising from these Terms or your use of SoulCards will be resolved through binding arbitration, except where prohibited by law.</p>
-                  </div>
-                </div>
-
-                <div className="mystical-card">
-                  <h2 className="text-2xl font-bold text-white mb-6">12. Changes to Terms</h2>
-                  <div className="space-y-4 text-gray-300">
-                    <p>We may modify these Terms at any time. We will notify you of material changes through the App or by email. Your continued use of SoulCards after changes become effective constitutes acceptance of the new Terms.</p>
-                  </div>
-                </div>
-
-                <div className="mystical-card">
-                  <h2 className="text-2xl font-bold text-white mb-6">13. Contact Information</h2>
-                  <div className="space-y-4 text-gray-300">
-                    <p>If you have questions about these Terms, please contact us:</p>
-                    <ul className="list-disc list-inside space-y-2 ml-4">
-                      <li>Email: legal@soulcards.app</li>
-                      <li>Website: Contact form on our website</li>
-                      <li>Mail: SoulCards Legal Team, [Address]</li>
+                    
+                    <p className="font-semibold text-purple-300 mb-2">Premium 訂閱：</p>
+                    <ul className="space-y-2">
+                      <li>• 無限制占卜次數</li>
+                      <li>• 高級塔羅牌陣</li>
+                      <li>• AI 深度解讀</li>
+                      <li>• 雲端同步功能</li>
+                      <li>• 優先客戶支持</li>
                     </ul>
                   </div>
+
+                  <h3 className="text-lg font-semibold text-white mb-3">4.2 付款處理</h3>
+                  <ul className="space-y-2 mb-4">
+                    <li>• 所有付款通過 Apple App Store 處理</li>
+                    <li>• 受 Apple 的付款條款約束</li>
+                    <li>• 我們不存儲您的付款信息</li>
+                  </ul>
+
+                  <h3 className="text-lg font-semibold text-white mb-3">4.3 自動續訂</h3>
+                  <ul className="space-y-2 mb-4">
+                    <li>• 訂閱自動續訂，週期與原始訂閱相同</li>
+                    <li>• 在當前期間結束前至少 24 小時取消</li>
+                    <li>• 通過 App Store 帳戶設置管理訂閱</li>
+                  </ul>
+
+                  <h3 className="text-lg font-semibold text-white mb-3">4.4 退款政策</h3>
+                  <ul className="space-y-2">
+                    <li>• 退款受 Apple App Store 退款政策約束</li>
+                    <li>• 請聯繫 Apple 支持處理退款請求</li>
+                    <li>• 我們保留拒絕不合理退款請求的權利</li>
+                  </ul>
                 </div>
 
-                <div className="mystical-card bg-mystical-600/20 border-mystical-400">
-                  <h2 className="text-2xl font-bold text-white mb-6">14. Acknowledgment</h2>
-                  <div className="space-y-4 text-gray-300">
-                    <p>By using SoulCards, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service. You also acknowledge that you have read and understood our Privacy Policy.</p>
-                    <p className="text-mystical-300 font-semibold">Thank you for choosing SoulCards for your spiritual journey. We're honored to be part of your path to self-discovery.</p>
-                  </div>
+                <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
+                  <FileText className="w-6 h-6 mr-3 text-purple-400" />
+                  5. 用戶內容
+                </h2>
+                <div className="text-gray-300 mb-6">
+                  <h3 className="text-lg font-semibold text-white mb-3">5.1 內容所有權</h3>
+                  <ul className="space-y-2 mb-4">
+                    <li>• 您保留對上傳內容的所有權</li>
+                    <li>• 授予我們非獨家、全球性的使用許可</li>
+                    <li>• 僅限於提供和改善服務的目的</li>
+                  </ul>
+
+                  <h3 className="text-lg font-semibold text-white mb-3">5.2 內容責任</h3>
+                  <ul className="space-y-2 mb-4">
+                    <li>• 對您的所有內容負全責</li>
+                    <li>• 不得上傳非法、有害或侵權內容</li>
+                    <li>• 我們保留刪除不當內容的權利</li>
+                  </ul>
+
+                  <h3 className="text-lg font-semibold text-white mb-3">5.3 頭像和個人檔案</h3>
+                  <ul className="space-y-2">
+                    <li>• 遵守社區標準和指導原則</li>
+                    <li>• 不得使用冒犯性或不適當的圖像</li>
+                    <li>• 我們保留要求更改的權利</li>
+                  </ul>
                 </div>
-              </motion.div>
-            </div>
+
+                <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
+                  <Shield className="w-6 h-6 mr-3 text-purple-400" />
+                  6. 知識產權
+                </h2>
+                <div className="text-gray-300 mb-6">
+                  <h3 className="text-lg font-semibold text-white mb-3">6.1 應用內容</h3>
+                  <ul className="space-y-2 mb-4">
+                    <li>• 所有塔羅牌圖像、設計和內容受版權保護</li>
+                    <li>• 未經許可不得複製、分發或商業使用</li>
+                    <li>• 僅限個人、非商業用途</li>
+                  </ul>
+
+                  <h3 className="text-lg font-semibold text-white mb-3">6.2 商標</h3>
+                  <ul className="space-y-2 mb-4">
+                    <li>• SoulCards 名稱和標誌是我們的商標</li>
+                    <li>• 未經書面許可不得使用</li>
+                  </ul>
+
+                  <h3 className="text-lg font-semibold text-white mb-3">6.3 用戶生成內容</h3>
+                  <ul className="space-y-2">
+                    <li>• 占卜筆記和個人解讀歸您所有</li>
+                    <li>• 授予我們改善服務的使用權</li>
+                  </ul>
+                </div>
+
+                <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
+                  <AlertTriangle className="w-6 h-6 mr-3 text-yellow-400" />
+                  7. 免責聲明
+                </h2>
+                <div className="text-gray-300 mb-6">
+                  <h3 className="text-lg font-semibold text-white mb-3">7.1 占卜免責聲明</h3>
+                  <ul className="space-y-2 mb-4">
+                    <li>• 塔羅占卜僅供娛樂和個人反思用途</li>
+                    <li>• 不構成專業建議（醫療、法律、財務等）</li>
+                    <li>• 不對占卜結果的準確性負責</li>
+                    <li>• 重要決定請諮詢專業人士</li>
+                  </ul>
+
+                  <h3 className="text-lg font-semibold text-white mb-3">7.2 AI 解讀免責聲明</h3>
+                  <ul className="space-y-2 mb-4">
+                    <li>• AI 生成的內容僅供參考</li>
+                    <li>• 不保證準確性、完整性或適用性</li>
+                    <li>• 不承擔因依賴 AI 建議導致的任何損失</li>
+                  </ul>
+
+                  <h3 className="text-lg font-semibold text-white mb-3">7.3 服務可用性</h3>
+                  <ul className="space-y-2">
+                    <li>• 服務按「現狀」和「可用」基礎提供</li>
+                    <li>• 不保證無中斷、及時或無錯誤</li>
+                    <li>• 保留隨時修改或終止服務的權利</li>
+                  </ul>
+                </div>
+
+                <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
+                  <FileText className="w-6 h-6 mr-3 text-purple-400" />
+                  8. 責任限制
+                </h2>
+                <div className="text-gray-300 mb-6">
+                  <h3 className="text-lg font-semibold text-white mb-3">8.1 直接損害</h3>
+                  <ul className="space-y-2 mb-4">
+                    <li>• 對因我們的重大過失導致的直接損害負責</li>
+                    <li>• 最高賠償限額為您最近 12 個月的訂閱費用</li>
+                  </ul>
+
+                  <h3 className="text-lg font-semibold text-white mb-3">8.2 間接損害</h3>
+                  <ul className="space-y-2 mb-4">
+                    <li>• 不對間接、偶然、特殊或後果性損害負責</li>
+                    <li>• 包括利潤損失、數據丟失、業務中斷等</li>
+                  </ul>
+
+                  <h3 className="text-lg font-semibold text-white mb-3">8.3 第三方行為</h3>
+                  <ul className="space-y-2">
+                    <li>• 不對其他用戶或第三方的行為負責</li>
+                    <li>• 不對第三方服務的問題負責</li>
+                  </ul>
+                </div>
+
+                <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
+                  <Users className="w-6 h-6 mr-3 text-purple-400" />
+                  9. 用戶行為
+                </h2>
+                <div className="text-gray-300 mb-6">
+                  <h3 className="text-lg font-semibold text-white mb-3">9.1 禁止行為</h3>
+                  <ul className="space-y-2 mb-4">
+                    <li>• 不得濫用、騷擾、威脅其他用戶</li>
+                    <li>• 不得上傳惡意軟件或病毒</li>
+                    <li>• 不得試圖未經授權訪問系統</li>
+                    <li>• 不得進行自動化訪問或數據挖掘</li>
+                    <li>• 不得冒充他人或提供虛假信息</li>
+                  </ul>
+
+                  <h3 className="text-lg font-semibold text-white mb-3">9.2 合理使用</h3>
+                  <ul className="space-y-2">
+                    <li>• 不得過度使用服務資源</li>
+                    <li>• 不得干擾服務的正常運行</li>
+                    <li>• 不得繞過任何安全功能</li>
+                  </ul>
+                </div>
+
+                <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
+                  <FileText className="w-6 h-6 mr-3 text-purple-400" />
+                  10. 終止
+                </h2>
+                <div className="text-gray-300 mb-6">
+                  <h3 className="text-lg font-semibold text-white mb-3">10.1 用戶終止</h3>
+                  <ul className="space-y-2 mb-4">
+                    <li>• 隨時可以刪除帳戶停止使用</li>
+                    <li>• 訂閱取消遵循 App Store 政策</li>
+                  </ul>
+
+                  <h3 className="text-lg font-semibold text-white mb-3">10.2 我們的終止權</h3>
+                  <ul className="space-y-2 mb-4">
+                    <li>• 違反本條款時可暫停或終止帳戶</li>
+                    <li>• 無理由終止，提前 30 天通知</li>
+                    <li>• 終止後刪除您的內容（法律要求保留的除外）</li>
+                  </ul>
+
+                  <h3 className="text-lg font-semibold text-white mb-3">10.3 終止後果</h3>
+                  <ul className="space-y-2">
+                    <li>• 失去對服務的訪問權限</li>
+                    <li>• 訂閱費用不退還（除非法律要求）</li>
+                  </ul>
+                </div>
+
+                <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
+                  <FileText className="w-6 h-6 mr-3 text-purple-400" />
+                  11. 修改和更新
+                </h2>
+                <div className="text-gray-300 mb-6">
+                  <h3 className="text-lg font-semibold text-white mb-3">11.1 服務更新</h3>
+                  <ul className="space-y-2 mb-4">
+                    <li>• 保留隨時修改、暫停或終止服務的權利</li>
+                    <li>• 重大變更將提前通知</li>
+                  </ul>
+
+                  <h3 className="text-lg font-semibold text-white mb-3">11.2 條款更新</h3>
+                  <ul className="space-y-2">
+                    <li>• 保留修改本條款的權利</li>
+                    <li>• 變更後繼續使用即表示接受新條款</li>
+                    <li>• 重大變更將通過應用通知</li>
+                  </ul>
+                </div>
+
+                <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
+                  <Scale className="w-6 h-6 mr-3 text-purple-400" />
+                  12. 適用法律
+                </h2>
+                <div className="text-gray-300 mb-6">
+                  <h3 className="text-lg font-semibold text-white mb-3">12.1 管轄法律</h3>
+                  <ul className="space-y-2 mb-4">
+                    <li>• 受香港特別行政區法律管轄</li>
+                    <li>• 不考慮法律衝突原則</li>
+                  </ul>
+
+                  <h3 className="text-lg font-semibold text-white mb-3">12.2 爭議解決</h3>
+                  <ul className="space-y-2">
+                    <li>• 首先嘗試通過友好協商解決</li>
+                    <li>• 協商不成時提交香港法院管轄</li>
+                  </ul>
+                </div>
+
+                <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
+                  <FileText className="w-6 h-6 mr-3 text-purple-400" />
+                  13. 聯繫方式
+                </h2>
+                <div className="text-gray-300 mb-6">
+                  <p className="mb-4">如有任何問題或疑慮，請聯繫：</p>
+                  <ul className="space-y-2">
+                    <li>• <strong>支持郵箱</strong>：<a href="mailto:service@soulcards-app.com" className="text-mystical-400 hover:text-mystical-300 transition-colors duration-200 underline">service@soulcards-app.com</a></li>
+                    <li>• <strong>應用內反饋</strong>：<a href="/#download" className="text-mystical-400 hover:text-mystical-300 transition-colors duration-200 underline">設置 &gt; 幫助與反饋</a></li>
+                    <li>• <strong>一般查詢</strong>：<a href="mailto:info@soulcards-app.com" className="text-mystical-400 hover:text-mystical-300 transition-colors duration-200 underline">info@soulcards-app.com</a></li>
+                  </ul>
+                </div>
+
+                <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
+                  <FileText className="w-6 h-6 mr-3 text-purple-400" />
+                  14. 其他條款
+                </h2>
+                <div className="text-gray-300 mb-6">
+                  <h3 className="text-lg font-semibold text-white mb-3">14.1 完整協議</h3>
+                  <p className="mb-4">• 本條款構成完整協議，取代之前的所有協議</p>
+
+                  <h3 className="text-lg font-semibold text-white mb-3">14.2 可分割性</h3>
+                  <p className="mb-4">• 如某條款被認定無效，不影響其他條款的有效性</p>
+
+                  <h3 className="text-lg font-semibold text-white mb-3">14.3 放棄</h3>
+                  <p className="mb-4">• 我們未能執行某條款不構成對該條款的放棄</p>
+
+                  <h3 className="text-lg font-semibold text-white mb-3">14.4 轉讓</h3>
+                  <ul className="space-y-2">
+                    <li>• 未經書面同意，您不得轉讓本協議下的權利</li>
+                    <li>• 我們保留轉讓服務給第三方的權利</li>
+                  </ul>
+                </div>
+
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Acknowledgment */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 backdrop-blur-sm rounded-xl p-8 border border-white/20"
+            >
+              <h3 className="text-2xl font-bold text-white mb-4">
+                感謝您的理解
+              </h3>
+              <p className="text-gray-300 mb-4">
+                使用本服務即表示您已閱讀、理解並同意遵守本服務條款。
+              </p>
+              <p className="text-sm text-gray-400">
+                最後更新：2025年
+              </p>
+            </motion.div>
           </div>
         </section>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Terms
+export default Terms;

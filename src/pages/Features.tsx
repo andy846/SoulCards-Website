@@ -138,8 +138,8 @@ const Features = () => {
             {/* Additional Features Screenshots */}
             <div className="grid md:grid-cols-3 gap-8">
               {[
-                { src: "/app-screenshots/IMG_0776.PNG", title: "多種占卜方式", description: "選擇適合您問題的占卜類型" },
-                { src: "/app-screenshots/IMG_0777.PNG", title: "分享洞察", description: "與朋友分享您的靈性發現" },
+                { src: "/app-screenshots/IMG_0776.PNG", title: "塔羅指南", description: "深入了解塔羅牌的歷史、象徵意義和解讀技巧，從初學者到進階的完整指南" },
+                { src: "/app-screenshots/IMG_0777.PNG", title: "占卜歷史", description: "探索占卜藝術的悠久歷史，了解不同文化中的占卜傳統和發展演變" },
                 { src: "/app-screenshots/IMG_0778.PNG", title: "靈性社群", description: "加入志同道合的靈性探索者" }
               ].map((feature, index) => (
                 <motion.div

@@ -11,8 +11,7 @@ const Footer = () => {
     ],
     company: [
       { name: '關於我們', path: '/about' },
-      { name: '聯絡我們', path: '/contact' },
-      { name: '部落格', path: '/blog' }
+      { name: '聯絡我們', path: '/contact' }
     ],
     legal: [
       { name: '隱私政策', path: '/privacy' },
@@ -20,9 +19,9 @@ const Footer = () => {
       { name: 'Cookie 政策', path: '/cookies' }
     ],
     support: [
-      { name: 'Help Center', path: '/help' },
-      { name: 'FAQ', path: '/faq' },
-      { name: 'Community', path: '/community' }
+      { name: 'Help Center', path: '/about' },
+      { name: 'FAQ', path: '/pricing#faq' },
+      { name: 'Community', path: '/about' }
     ]
   }
 
@@ -46,9 +45,11 @@ const Footer = () => {
               viewport={{ once: true }}
             >
               <Link to="/" className="flex items-center space-x-3 mb-6">
-                <div className="w-10 h-10 bg-mystical-gradient rounded-full flex items-center justify-center">
-                  <Star className="w-6 h-6 text-white" />
-                </div>
+                <img 
+                  src="/icon-1024.png" 
+                  alt="SoulCards Logo" 
+                  className="w-10 h-10 rounded-full object-cover"
+                />
                 <span className="text-2xl font-bold text-white">SoulCards</span>
               </Link>
               
@@ -57,22 +58,17 @@ const Footer = () => {
                 to guide your spiritual journey.
               </p>
               
-              {/* Newsletter Signup */}
+              {/* Contact Information */}
               <div className="mb-6">
                 <h4 className="text-white font-semibold mb-3">保持聯繫</h4>
-                <div className="flex max-w-md">
-                  <input
-                    type="email"
-                    placeholder="輸入您的電子郵件"
-                    className="flex-1 px-4 py-3 bg-void-800 border border-mystical-500/30 rounded-l-lg text-white placeholder-gray-400 focus:outline-none focus:border-mystical-400"
-                  />
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="px-6 py-3 bg-mystical-gradient rounded-r-lg text-white font-semibold hover:shadow-lg hover:shadow-mystical-500/25 transition-all duration-300"
+                <div className="flex items-center space-x-2 text-mystical-300">
+                  <Mail className="w-5 h-5" />
+                  <a 
+                    href="mailto:service@soulcards-app.com"
+                    className="hover:text-mystical-200 transition-colors duration-300"
                   >
-                    <Mail className="w-5 h-5" />
-                  </motion.button>
+                    service@soulcards-app.com
+                  </a>
                 </div>
               </div>
 
@@ -205,7 +201,7 @@ const Footer = () => {
             className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0"
           >
             <div className="text-gray-400 text-sm">
-              © 2024 SoulCards. All rights reserved.
+              © 2025 SoulCards. All rights reserved.
             </div>
             
             <div className="flex items-center space-x-2 text-gray-400 text-sm">

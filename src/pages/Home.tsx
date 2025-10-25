@@ -1,10 +1,13 @@
 import { motion } from 'framer-motion'
 import { Helmet } from 'react-helmet-async'
 import { Star, Download, Sparkles, Moon, Sun } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
 import TarotCarousel from '../components/TarotCarousel'
 import PhoneCarousel from '../components/PhoneCarousel'
 
 const Home = () => {
+  const navigate = useNavigate()
+
   const screenshots = [
     {
       id: '1',
@@ -37,6 +40,37 @@ const Home = () => {
       description: '每日塔羅牌洞察'
     }
   ]
+
+  const handleDownload = () => {
+    // 跳轉到下載區域
+    const downloadSection = document.getElementById('download')
+    if (downloadSection) {
+      downloadSection.scrollIntoView({ behavior: 'smooth' })
+    } else {
+      // 如果沒有下載區域，可以跳轉到 App Store 或顯示下載選項
+      window.open('https://apps.apple.com/app/soulcards', '_blank')
+    }
+  }
+
+  const handleLearnMore = () => {
+    navigate('/about')
+  }
+
+  const handleViewAllCards = () => {
+    navigate('/features')
+  }
+
+  const handleGoogleLogin = () => {
+    // 這裡可以實現 Google 登入功能
+    // 暫時跳轉到登入區域
+    const loginSection = document.getElementById('login')
+    if (loginSection) {
+      loginSection.scrollIntoView({ behavior: 'smooth' })
+    } else {
+      // 可以實現實際的 Google 登入邏輯
+      console.log('Google 登入功能待實現')
+    }
+  }
 
   return (
     <>
@@ -99,11 +133,17 @@ const Home = () => {
                 transition={{ duration: 0.8, delay: 0.6 }}
                 className="flex flex-col sm:flex-row gap-4 justify-center items-center"
               >
-                <button className="cosmic-button flex items-center gap-2 text-lg px-8 py-4">
+                <button 
+                  onClick={handleDownload}
+                  className="cosmic-button flex items-center gap-2 text-lg px-8 py-4"
+                >
                   <Download className="w-5 h-5" />
                   下載 iOS 版本
                 </button>
-                <button className="mystical-card hover:bg-mystical-700/20 text-white border-mystical-600 px-8 py-4 rounded-lg transition-all duration-300">
+                <button 
+                  onClick={handleLearnMore}
+                  className="mystical-card hover:bg-mystical-700/20 text-white border-mystical-600 px-8 py-4 rounded-lg transition-all duration-300"
+                >
                   了解更多
                 </button>
               </motion.div>
@@ -149,7 +189,7 @@ const Home = () => {
                 },
                 {
                   title: "個人化指導",
-                  description: "根據您獨特的能量和生活環境，獲得量身定制的建議。",
+                  description: "根據您獨特的能量和使用環境，獲得量身定制的建議。",
                   icon: "✨"
                 },
                 {
@@ -218,7 +258,10 @@ const Home = () => {
               <p className="text-gray-400 mb-6">
                 點擊任意牌卡查看詳細解釋和含義
               </p>
-              <button className="mystical-card hover:bg-mystical-700/20 text-white border-mystical-600 px-6 py-3 rounded-lg transition-all duration-300">
+              <button 
+                onClick={handleViewAllCards}
+                className="mystical-card hover:bg-mystical-700/20 text-white border-mystical-600 px-6 py-3 rounded-lg transition-all duration-300"
+              >
                 查看所有塔羅牌
               </button>
             </motion.div>
@@ -279,62 +322,8 @@ const Home = () => {
           </div>
         </section>
 
-        {/* Testimonials */}
-        <section className="py-20">
-          <div className="container mx-auto px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-                用戶評價
-              </h2>
-            </motion.div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                {
-                  name: "莎拉 M.",
-                  rating: 5,
-                  text: "SoulCards 改變了我的日常靈性修行。AI 占卜非常準確且富有洞察力。"
-                },
-                {
-                  name: "邁克爾 R.",
-                  rating: 5,
-                  text: "我使用塔羅牌多年了，這個應用程式提供了我見過最詳細和有用的解釋。"
-                },
-                {
-                  name: "露娜 K.",
-                  rating: 5,
-                  text: "介面很美，占卜感覺真正個人化。就像口袋裡有一位靈性顧問。"
-                }
-              ].map((testimonial, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.2 }}
-                  viewport={{ once: true }}
-                  className="mystical-card"
-                >
-                  <div className="flex mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 text-cosmic-400 fill-current" />
-                    ))}
-                  </div>
-                  <p className="text-gray-300 mb-4">「{testimonial.text}」</p>
-                  <p className="text-mystical-400 font-semibold">- {testimonial.name}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* CTA Section */}
-        <section className="py-20 bg-mystical-gradient relative overflow-hidden">
+        <section id="download" className="py-20 bg-mystical-gradient relative overflow-hidden">
           <div className="absolute inset-0 bg-void-950/80"></div>
           <div className="container mx-auto px-6 relative z-10">
             <motion.div
@@ -350,14 +339,13 @@ const Home = () => {
               <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
                 立即下載 SoulCards，通過 AI 驅動的塔羅牌占卜解開您命運的奧秘。
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <button className="cosmic-button text-lg px-8 py-4 flex items-center gap-2">
+              <div className="flex justify-center">
+                <button 
+                  onClick={handleDownload}
+                  className="cosmic-button text-lg px-8 py-4 flex items-center gap-2"
+                >
                   <Download className="w-5 h-5" />
                   立即下載
-                </button>
-                <button className="mystical-card hover:bg-white/10 text-white border-white/20 text-lg px-8 py-4 flex items-center gap-3 transition-all duration-300">
-                  <img src="/google-login.png" alt="Google" className="w-5 h-5" />
-                  使用 Google 登入
                 </button>
               </div>
             </motion.div>
