@@ -1,91 +1,100 @@
 import { motion } from 'framer-motion'
 import { Helmet } from 'react-helmet-async'
-import { Check, Star, Crown, Zap } from 'lucide-react'
+import { Check, Star, Crown, Calendar, Zap, X } from 'lucide-react'
 
 const Pricing = () => {
   const plans = [
     {
-      name: "免費版",
-      price: "$0",
-      period: "永久免費",
-      description: "適合初學者探索塔羅",
-      icon: Star,
-      features: [
-        "每日3次占卜",
-        "基礎牌義解釋",
-        "簡單三張牌陣",
-        "占卜記錄（7天）",
-        "社群支援"
-      ],
-      limitations: [
-        "僅限基礎牌陣",
-        "無進階AI洞察",
-        "含廣告"
-      ],
-      buttonText: "開始使用",
-      popular: false
-    },
-    {
-      name: "進階版",
-      price: "$9.99",
+      name: "SoulCards 高級用戶",
+      price: "HKD 38",
       period: "每月",
-      description: "解鎖AI塔羅的完整力量",
+      description: "解鎖所有高級功能，享受無限占卜體驗",
       icon: Crown,
       features: [
-        "無限制每日占卜",
-        "進階AI解讀",
-        "所有塔羅牌陣",
-        "無限占卜記錄",
-        "個人占卜日誌",
-        "詳細牌義說明",
-        "優先客服支援",
-        "無廣告體驗"
+        "無限占卜次數",
+        "AI深度解讀",
+        "歷史記錄雲端同步",
+        "每日運勢推送",
+        "專屬牌陣",
+        "高級動畫效果",
+        "完整歷史分析",
+        "高級分享模板",
+        "優先客服支持",
+        "所有視覺特效"
       ],
       limitations: [],
-      buttonText: "開始免費試用",
-      popular: true
+      buttonText: "開始月付訂閱",
+      popular: false,
+      savings: null
     },
     {
-      name: "終身版",
-      price: "$99.99",
-      period: "一次性付費",
-      description: "永久完整存取權限",
-      icon: Zap,
+      name: "SoulCards 高級用戶",
+      price: "HKD 368",
+      period: "每年",
+      description: "年付方案，享受更優惠的價格",
+      icon: Calendar,
       features: [
-        "包含進階版所有功能",
-        "終身存取權限",
-        "未來功能更新",
-        "獨家內容",
-        "VIP客服支援",
-        "新功能搶先體驗",
-        "自訂牌陣創建器",
-        "占卜資料匯出"
+        "包含月付所有功能",
+        "無限占卜次數",
+        "AI深度解讀",
+        "歷史記錄雲端同步",
+        "每日運勢推送",
+        "專屬牌陣",
+        "高級動畫效果",
+        "完整歷史分析",
+        "高級分享模板",
+        "優先客服支持",
+        "所有視覺特效"
       ],
       limitations: [],
-      buttonText: "購買終身版",
-      popular: false
+      buttonText: "選擇年付方案",
+      popular: true,
+      savings: "節省 HKD 88"
     }
+  ]
+
+  const freeFeatures = [
+    "基礎塔羅占卜（每日3次）",
+    "基本牌陣選擇",
+    "基礎卡牌解讀",
+    "完整歷史記錄查看",
+    "占卜結果分享",
+    "AI分析（在每日限制內）",
+    "基本用戶界面"
+  ]
+
+  const premiumFeatures = [
+    "無限占卜次數",
+    "AI深度解讀",
+    "歷史記錄雲端同步",
+    "每日運勢推送",
+    "專屬牌陣",
+    "高級動畫效果",
+    "完整歷史分析",
+    "高級分享模板",
+    "優先客服支持",
+    "所有視覺特效"
   ]
 
   const testimonials = [
     {
-      name: "Emma Thompson",
-      plan: "進階版",
-      text: "進階版方案徹底改變了我的靈性修行。AI 洞察非常詳細且準確。",
+      name: "李美華",
+      plan: "高級用戶",
+      text: "高級版的無限占卜功能讓我能夠隨時探索內心，AI深度解讀非常準確，幫助我做出重要決定。",
       rating: 5,
       avatar: "🌟"
     },
     {
-      name: "David Chen",
-      plan: "終身版",
-      text: "這是我為靈性旅程做過最好的投資。終身版在一年內就回本了。",
+      name: "陳志明",
+      plan: "高級用戶",
+      text: "年付方案非常划算！雲端同步功能讓我在不同設備上都能查看占卜記錄，專屬牌陣也很有趣。",
       rating: 5,
       avatar: "🔮"
     },
     {
-      name: "Sarah Williams",
-      plan: "進階版",
-      text: "無限制的占卜和進階牌陣幫助我對人生道路獲得更深層的洞察。",
+      name: "王小雅",
+      plan: "高級用戶",
+      text: "每日運勢推送和高級動畫效果讓整個體驗變得更加豐富，優先客服也很貼心。",
       rating: 5,
       avatar: "✨"
     }
@@ -95,7 +104,7 @@ const Pricing = () => {
     <>
       <Helmet>
         <title>價格方案 - SoulCards AI 塔羅占卜</title>
-        <meta name="description" content="為您的靈性旅程選擇完美的 SoulCards 方案。提供免費版、進階版和終身版，具備先進的 AI 塔羅占卜功能。" />
+        <meta name="description" content="選擇 SoulCards 高級用戶方案，享受無限占卜、AI深度解讀、雲端同步等豪華功能。月付 HKD38 或年付 HKD368。" />
       </Helmet>
 
       <div className="min-h-screen pt-20">
@@ -111,20 +120,153 @@ const Pricing = () => {
               className="text-center mb-16"
             >
               <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-mystical-gradient bg-clip-text text-transparent">
-                選擇您的道路
+                升級至高級用戶
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
-                為您的靈性旅程選擇完美的方案。
-                所有方案都包含我們核心的AI塔羅占卜技術。
+                解鎖 SoulCards 的完整潛能，享受無限占卜和專業級 AI 洞察。
+                選擇最適合您的訂閱方案。
               </p>
             </motion.div>
           </div>
         </section>
 
-        {/* Pricing Cards */}
+        {/* Free vs Premium Comparison */}
+        <section className="py-20 bg-void-900/50">
+          <div className="container mx-auto px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+                免費 vs 高級用戶
+              </h2>
+              <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+                了解升級後您將獲得的強大功能和無限可能。
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+              {/* Free User Card */}
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="mystical-card"
+              >
+                <div className="text-center mb-8">
+                  <div className="w-16 h-16 bg-gray-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Star className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-2">免費用戶</h3>
+                  <p className="text-gray-400 mb-4">基礎功能，適合初學者</p>
+                  <div className="mb-4">
+                    <span className="text-4xl font-bold text-white">免費</span>
+                  </div>
+                </div>
+
+                <div className="space-y-4 mb-8">
+                  <div className="text-sm text-gray-400 font-semibold mb-2">核心限制：</div>
+                  <div className="flex items-center gap-3 text-red-400">
+                    <X className="w-5 h-5 flex-shrink-0" />
+                    <span>每日占卜次數限制 3次</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-red-400">
+                    <X className="w-5 h-5 flex-shrink-0" />
+                    <span>AI分析僅在每日限制內</span>
+                  </div>
+                  
+                  <div className="text-sm text-gray-400 font-semibold mt-6 mb-2">可用功能：</div>
+                  {freeFeatures.map((feature, index) => (
+                    <div key={index} className="flex items-center gap-3">
+                      <Check className="w-5 h-5 text-cosmic-400 flex-shrink-0" />
+                      <span className="text-gray-300">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <button className="w-full py-3 px-6 rounded-lg font-semibold bg-gray-600 hover:bg-gray-500 text-white transition-all duration-300">
+                  免費使用
+                </button>
+              </motion.div>
+
+              {/* Premium User Card */}
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="mystical-card ring-2 ring-mystical-500 relative"
+              >
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                  <span className="bg-mystical-gradient text-white px-4 py-2 rounded-full text-sm font-semibold">
+                    推薦方案
+                  </span>
+                </div>
+
+                <div className="text-center mb-8">
+                  <div className="w-16 h-16 bg-mystical-gradient rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Crown className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-2">高級用戶</h3>
+                  <p className="text-gray-400 mb-4">完整功能，無限可能</p>
+                  <div className="mb-4">
+                    <span className="text-2xl font-bold text-white">HKD 38</span>
+                    <span className="text-gray-400 ml-2">/月</span>
+                    <div className="text-sm text-mystical-400 mt-1">或年付 HKD 368（節省 HKD 88）</div>
+                  </div>
+                </div>
+
+                <div className="space-y-4 mb-8">
+                  <div className="text-sm text-mystical-400 font-semibold mb-2">核心特權：</div>
+                  <div className="flex items-center gap-3 text-green-400">
+                    <Zap className="w-5 h-5 flex-shrink-0" />
+                    <span>無限占卜次數</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-green-400">
+                    <Zap className="w-5 h-5 flex-shrink-0" />
+                    <span>所有高級功能完全解鎖</span>
+                  </div>
+                  
+                  <div className="text-sm text-mystical-400 font-semibold mt-6 mb-2">完整功能列表：</div>
+                  {premiumFeatures.map((feature, index) => (
+                    <div key={index} className="flex items-center gap-3">
+                      <Check className="w-5 h-5 text-cosmic-400 flex-shrink-0" />
+                      <span className="text-gray-300">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <button className="w-full py-3 px-6 rounded-lg font-semibold cosmic-button">
+                  立即升級
+                </button>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Pricing Plans */}
         <section className="py-20">
           <div className="container mx-auto px-6">
-            <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+                選擇您的訂閱方案
+              </h2>
+              <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+                兩種靈活的付費方式，滿足不同需求。年付方案更優惠！
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {plans.map((plan, index) => (
                 <motion.div
                   key={index}
@@ -142,6 +284,14 @@ const Pricing = () => {
                     </div>
                   )}
 
+                  {plan.savings && (
+                    <div className="absolute -top-2 -right-2">
+                      <span className="bg-green-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                        {plan.savings}
+                      </span>
+                    </div>
+                  )}
+
                   <div className="text-center mb-8">
                     <div className="w-16 h-16 bg-mystical-gradient rounded-full flex items-center justify-center mx-auto mb-4">
                       <plan.icon className="w-8 h-8 text-white" />
@@ -151,6 +301,11 @@ const Pricing = () => {
                     <div className="mb-4">
                       <span className="text-4xl font-bold text-white">{plan.price}</span>
                       <span className="text-gray-400 ml-2">/{plan.period}</span>
+                      {plan.period === "每年" && (
+                        <div className="text-sm text-gray-400 mt-1">
+                          平均每月 HKD 30.7
+                        </div>
+                      )}
                     </div>
                   </div>
 
@@ -159,15 +314,6 @@ const Pricing = () => {
                       <div key={featureIndex} className="flex items-center gap-3">
                         <Check className="w-5 h-5 text-cosmic-400 flex-shrink-0" />
                         <span className="text-gray-300">{feature}</span>
-                      </div>
-                    ))}
-                    
-                    {plan.limitations.map((limitation, limitIndex) => (
-                      <div key={limitIndex} className="flex items-center gap-3 opacity-60">
-                        <div className="w-5 h-5 flex-shrink-0 flex items-center justify-center">
-                          <div className="w-3 h-0.5 bg-gray-500"></div>
-                        </div>
-                        <span className="text-gray-400 text-sm">{limitation}</span>
                       </div>
                     ))}
                   </div>
@@ -185,67 +331,8 @@ const Pricing = () => {
           </div>
         </section>
 
-        {/* Feature Comparison */}
-        <section className="py-20 bg-void-900/50">
-          <div className="container mx-auto px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-                功能比較
-              </h2>
-              <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-                查看每個方案包含的詳細功能，為您的需求做出最佳選擇。
-              </p>
-            </motion.div>
-
-            <div className="overflow-x-auto">
-              <table className="w-full max-w-4xl mx-auto">
-                <thead>
-                  <tr className="border-b border-mystical-700">
-                    <th className="text-left py-4 px-6 text-white font-semibold">功能</th>
-                    <th className="text-center py-4 px-6 text-white font-semibold">免費版</th>
-                    <th className="text-center py-4 px-6 text-white font-semibold">進階版</th>
-                    <th className="text-center py-4 px-6 text-white font-semibold">終身版</th>
-                  </tr>
-                </thead>
-                <tbody className="text-gray-300">
-                  {[
-                    { feature: "每日占卜", free: "3次", premium: "無限制", lifetime: "無限制" },
-                    { feature: "塔羅牌陣", free: "基礎", premium: "全部", lifetime: "全部 + 自訂" },
-                    { feature: "AI 洞察", free: "基礎", premium: "進階", lifetime: "進階" },
-                    { feature: "占卜記錄", free: "7天", premium: "無限制", lifetime: "無限制" },
-                    { feature: "個人日誌", free: "❌", premium: "✅", lifetime: "✅" },
-                    { feature: "優先支援", free: "❌", premium: "✅", lifetime: "VIP" },
-                    { feature: "無廣告體驗", free: "❌", premium: "✅", lifetime: "✅" },
-                    { feature: "資料匯出", free: "❌", premium: "❌", lifetime: "✅" }
-                  ].map((row, index) => (
-                    <motion.tr
-                      key={index}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.5, delay: index * 0.1 }}
-                      viewport={{ once: true }}
-                      className="border-b border-void-800 hover:bg-void-800/30"
-                    >
-                      <td className="py-4 px-6 font-medium">{row.feature}</td>
-                      <td className="py-4 px-6 text-center">{row.free}</td>
-                      <td className="py-4 px-6 text-center">{row.premium}</td>
-                      <td className="py-4 px-6 text-center">{row.lifetime}</td>
-                    </motion.tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </section>
-
         {/* Testimonials */}
-        <section className="py-20">
+        <section className="py-20 bg-void-900/50">
           <div className="container mx-auto px-6">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
@@ -285,7 +372,7 @@ const Pricing = () => {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-20 bg-void-900/50">
+        <section className="py-20">
           <div className="container mx-auto px-6">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
@@ -303,19 +390,23 @@ const Pricing = () => {
               {[
                 {
                   question: "我可以隨時取消訂閱嗎？",
-                  answer: "是的，您可以隨時取消進階版訂閱。您將繼續享有服務直到當前計費週期結束。"
+                  answer: "是的，您可以隨時取消高級用戶訂閱。取消後您將繼續享有服務直到當前計費週期結束，之後自動降級為免費用戶。"
                 },
                 {
-                  question: "進階版有免費試用嗎？",
-                  answer: "有的！我們提供 7 天免費試用，讓您在承諾之前體驗所有進階功能。"
+                  question: "月付和年付方案有什麼區別？",
+                  answer: "功能完全相同，年付方案更優惠，一年只需 HKD 368，相比月付可節省 HKD 88，平均每月只需 HKD 30.7。"
                 },
                 {
-                  question: "如果我降級，我的資料會怎樣？",
-                  answer: "您的占卜記錄和日誌條目會被保留。您只是對某些功能的存取權限會受到限制，直到您再次升級。"
+                  question: "升級後我的免費期間數據會保留嗎？",
+                  answer: "當然！您的所有占卜記錄、歷史數據和個人設置都會完整保留，升級後還會享受雲端同步功能。"
                 },
                 {
-                  question: "終身版真的是終身的嗎？",
-                  answer: "絕對是！終身版讓您永久存取 SoulCards 進階功能，包括未來的更新和新功能。"
+                  question: "高級用戶真的可以無限占卜嗎？",
+                  answer: "是的！高級用戶沒有每日占卜次數限制，您可以隨時進行占卜，並享受 AI 深度解讀和所有高級功能。"
+                },
+                {
+                  question: "如果我降級會怎樣？",
+                  answer: "降級後您的數據會保留，但會受到免費用戶的限制（每日 3 次占卜）。您可以隨時重新升級恢復所有高級功能。"
                 }
               ].map((faq, index) => (
                 <motion.div
@@ -346,17 +437,18 @@ const Pricing = () => {
               className="text-center"
             >
               <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-                立即開始您的旅程
+                立即升級，開啟無限可能
               </h2>
               <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
-                加入數千名已透過 SoulCards 釋放靈性潛能的用戶。
+                加入數千名高級用戶，體驗 SoulCards 的完整力量。
+                無限占卜，專業洞察，助您探索人生道路。
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button className="cosmic-button text-lg px-8 py-4">
-                  開始免費試用
+                  開始月付訂閱
                 </button>
                 <button className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-void-950 px-8 py-4 rounded-lg transition-all duration-300">
-                  下載免費版本
+                  選擇年付方案
                 </button>
               </div>
             </motion.div>
