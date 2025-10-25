@@ -2,6 +2,8 @@
 
 A mystical promotional website for SoulCards, an AI-powered tarot reading mobile application. Built with React 18, TypeScript, Vite, Tailwind CSS, and Framer Motion.
 
+🌟 **Live Website**: [https://soulcards-app.com/](https://soulcards-app.com/)
+
 ## ✨ Features
 
 - **Modern Tech Stack**: React 18 + TypeScript + Vite + Tailwind CSS
